@@ -1005,3 +1005,18 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+/* font */
+@font-face {
+	font-family: 'uzuraFont';
+	src: url(../fonts/uzura.ttf);
+}
+
+body {
+	font-family: uzuraFont;
+  -webkit-text-stroke: .1px #000;
+}
+h1 {
+  font-family: uzuraFont;
+  -webkit-text-stroke: .1px #000;
+}
