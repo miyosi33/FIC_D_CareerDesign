@@ -914,7 +914,6 @@ a:focus {
 .footer_section .footer-logo {
   font-weight: 600;
   margin-bottom: 20px;
-  font-family: 'Dancing Script', cursive;
 }
 
 .footer_section p {
@@ -1032,4 +1031,7 @@ a {
 }
 .slider-title {
   -webkit-text-stroke: 0.1px #000;
+}
+.uzuraFont {
+  font-family: uzuraFont;
 }
