@@ -1014,7 +1014,6 @@ a:focus {
 
 body {
 	font-family: uzuraFont;
-  -webkit-text-stroke: 0.1px #000;
 }
 h1 {
   font-family: uzuraFont;
@@ -1030,4 +1029,7 @@ span {
 }
 a {
   font-family: uzuraFont;
+}
+.slider-title {
+  -webkit-text-stroke: 0.1px #000;
 }
