@@ -30,10 +30,6 @@ body {
   padding-bottom: 90px;
 }
 
-h1,
-h2 {
-  font-family: 'Dancing Script', cursive;
-}
 
 .heading_container {
   display: -webkit-box;
@@ -147,9 +143,6 @@ a:focus {
   padding-left: 25px;
 }
 
-.navbar-brand {
-  font-family: 'Dancing Script', cursive;
-}
 
 .navbar-brand span {
   font-weight: bold;
@@ -435,13 +428,11 @@ a:focus {
 }
 
 .offer_section .box .detail-box h5 {
-  font-family: 'Dancing Script', cursive;
   font-size: 24px;
   margin: 0;
 }
 
 .offer_section .box .detail-box h6 {
-  font-family: 'Dancing Script', cursive;
   margin: 10px 0;
 }
 
@@ -1013,21 +1004,6 @@ a:focus {
 
 body {
 	font-family: uzuraFont;
-}
-h1 {
-  font-family: uzuraFont;
-}
-h2 {
-  font-family: uzuraFont; 
-}
-h4 {
-  font-family: uzuraFont;
-}
-span {
-  font-family: uzuraFont;
-}
-a {
-  font-family: uzuraFont;
 }
 .slider-title {
   -webkit-text-stroke: 0.1px #000;
