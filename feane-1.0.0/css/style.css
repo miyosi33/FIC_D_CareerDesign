@@ -1008,3 +1008,7 @@ body {
 .detail-box {
   text-shadow: 1px 2px 3px #808080;
 }
+
+.navbar{
+  background-color: #000000;
+}
