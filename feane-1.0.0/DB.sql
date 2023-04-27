@@ -1,4 +1,4 @@
-drop database if exists DBsql;
+drop database if exists kadai;
 create database kadai default character set utf8 collate utf8_general_ci;
 grant all on kadai.* to 'staff'@'localhost' identified by 'password';
 use kadai;
@@ -38,7 +38,7 @@ create table purchase_detail (
 
 create table zaseki(
 	
-)
+);
 insert into product values(null, 'クッキー', 120);
 insert into product values(null, 'クロワッサン', 200);
 insert into product values(null, 'いちごタルト', 400);
