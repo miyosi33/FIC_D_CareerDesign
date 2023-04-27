@@ -1,4 +1,4 @@
-drop database if exists kadai;
+drop database if exists DBsql;
 create database kadai default character set utf8 collate utf8_general_ci;
 grant all on kadai.* to 'staff'@'localhost' identified by 'password';
 use kadai;
@@ -36,15 +36,9 @@ create table purchase_detail (
 	foreign key(product_id) references product(product_id)
 );
 
-/* お気に入り　いらないかも */
-create table favorite (
-	customer_id int not null, 
-	product_id int not null, 
-	primary key(customer_id, product_id), 
-	foreign key(customer_id) references customer(id), 
-	foreign key(product_id) references product(product_id)
-);
-
+create table zaseki(
+	
+)
 insert into product values(null, 'クッキー', 120);
 insert into product values(null, 'クロワッサン', 200);
 insert into product values(null, 'いちごタルト', 400);
