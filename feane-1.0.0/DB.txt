@@ -1,3 +1,12 @@
+テーブル　顧客情報、商品、購入、管理者、座席、DM、
+
+予約で必要なもの
+予約日（時間等）、座席の数、整理番号、顧客情報、削除日時（キャンセル時の処理は実装未定）
+
+座席が１、２，４から選択
+
+
+
 insert into product values(null, 'クッキー', 120);
 insert into product values(null, 'クロワッサン', 200);
 insert into product values(null, 'いちごタルト', 400);
