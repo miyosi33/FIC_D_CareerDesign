@@ -37,13 +37,20 @@ create table purchase_detail (
 );
 
 create table zaseki(
-	
+
+
+
 );
+
+create table DM(
+
+);
+
 insert into product values(null, 'クッキー', 120);
 insert into product values(null, 'クロワッサン', 200);
 insert into product values(null, 'いちごタルト', 400);
 insert into product values(null, 'チョコタルト', 400);
-insert into product values(null, 'いちごケーキ', 400);
+insert into product values(null, 'ショートケーキ', 400);
 insert into product values(null, 'チョコケーキ', 400);
 insert into product values(null, 'サンドイッチ', 300);
 insert into product values(null, 'パンケーキ', 500);
