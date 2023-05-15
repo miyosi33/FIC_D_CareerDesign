@@ -36,12 +36,14 @@ create table purchase_detail (
 	foreign key(product_id) references product(product_id)
 );
 
+
 create table zaseki(
 
 
 
 );
 
+/* まだ大丈夫b */
 create table DM(
 
 );
