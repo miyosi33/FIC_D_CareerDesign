@@ -1,82 +1,47 @@
-drop database if exists kadai;
-create database kadai default character set utf8 collate utf8_general_ci;
-grant all on kadai.* to 'staff'@'localhost' identified by 'password';
-use kadai;
-
-/* 商品 */
-create table product (
-	product_id int auto_increment primary key, 
-	product_name varchar(100) not null, 
-	product_price int not null
+-- Customers テーブルの作成
+CREATE TABLE Customers (
+	customer_id INT PRIMARY KEY,
+	name VARCHAR(50),
+	contact VARCHAR(50)
 );
 
-/* 顧客のやつ */ 
-create table customer (
-	id int auto_increment primary key, 
-	name varchar(100) not null, 
-	address varchar(100) not null, 
-	login varchar(100) not null unique, 
-	password varchar(100) not null
+-- Seats テーブルの作成
+CREATE TABLE Seats (
+	seat_id INT PRIMARY KEY,
+	seat_number VARCHAR(10),
+	seat_type VARCHAR(20),
+	status VARCHAR(20)
 );
 
-/* 購入 */
-create table purchase (
-	id int not null primary key, 
-	customer_id int not null, 
-	foreign key(customer_id) references customer(id)
+-- Reservations テーブルの作成
+CREATE TABLE Reservations (
+	reservation_id INT PRIMARY KEY,
+	customer_id INT,
+	seat_id INT,
+	reservation_date DATETIME,
+	FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+	FOREIGN KEY (seat_id) REFERENCES Seats(seat_id)
 );
 
-/* 購入詳細 */
-create table purchase_detail (
-	purchase_id int not null, 
-	product_id int not null, 
-	count int not null, 
-	primary key(purchase_id, product_id), 
-	foreign key(purchase_id) references purchase(id), 
-	foreign key(product_id) references product(product_id)
-);
+-- Customers テーブルへのデータ挿入の例
+INSERT INTO Customers (customer_id, name, contact)
+VALUES (1, 'John Doe', 'john@example.com');
 
-/* 座席予約のやつ */
-create table zaseki(
+-- Seats テーブルへのデータ挿入の例
+INSERT INTO Seats (seat_id, seat_number, seat_type, status)
+VALUES (1, 'A1', 'General', 'Available'),
+		(2, 'A2', 'General', 'Available'),
+        (3, 'B1', 'Premium', 'Available');
 
+-- Reservations テーブルへのデータ挿入の例
+INSERT INTO Reservations (reservation_id, customer_id, seat_id, reservation_date)
+VALUES (1, 1, 1, '2023-05-19 10:00:00');
 
+-- 予約の確認の例
+SELECT * FROM Reservations WHERE customer_id = 1;
 
-);
+-- 予約の更新の例
+UPDATE Reservations SET reservation_date = '2023-05-19 14:00:00' WHERE reservation_id = 1;
 
-/* まだ大丈夫b */
-create table DM(
-
-);
-
-/* 商品詳細 */
-insert into product values(null, 'クッキー', 120);
-insert into product values(null, 'クロワッサン', 200);
-insert into product values(null, 'いちごタルト', 400);
-insert into product values(null, 'チョコタルト', 400);
-insert into product values(null, 'ショートケーキ', 400);
-insert into product values(null, 'チョコケーキ', 400);
-insert into product values(null, 'サンドイッチ', 300);
-insert into product values(null, 'パンケーキ', 500);
-insert into product values(null, 'フレンチトースト', 250);
-insert into product values(null, 'アイスレモンティー', 400);
-insert into product values(null, 'アイスミルクティー', 400);
-insert into product values(null, 'アイスティー', 400);
-insert into product values(null, 'レモンティー', 400);
-insert into product values(null, 'ミルクティー', 400);
-insert into product values(null, '紅茶', 400);
-insert into product values(null, 'アイスコーヒー', 350);
-insert into product values(null, 'ホットコーヒー', 350);
-insert into product values(null, 'アイスラテ', 400);
-insert into product values(null, 'ラテ', 400);
-insert into product values(null, 'アイスキャラメルラテ', 450);
-insert into product values(null, 'キャラメルラテ', 450);
-insert into product values(null, 'アイスココア', 450);
-insert into product values(null, 'ココア', 450);
-insert into product values(null, 'ホットチョコレート', 450);
-insert into product values(null, 'オレンジジュース', 300);
-
-
-/* カスタマーのやつ */ 
-insert into customer values(null, '下道', '福岡市博多区中呉服町3-13', 'sita', 'sita');
-
-
+-- 予約のキャンセルの例
+DELETE FROM Reservations WHERE reservation_id = 1;
