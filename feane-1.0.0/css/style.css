@@ -692,7 +692,7 @@ a:focus {
   color: #222222;
 }
 
-.book_section .form_container .nice-select .current {
+.book_section .form_container .current {
   font-size: 16px;
 }
 
@@ -1013,6 +1013,22 @@ body {
   background-color: #000000;
   padding: 8px 20px;
 }
-.dropdown{
+.quanity-div{
+  margin: 0 0 16px;
+  height: 30px;
   margin-bottom: 16px;
+}
+.quanity-form{
+  height: 100%;
+}
+.quanity-label{
+  width:100%
+}
+.quanity{
+  background-color: #6C757D;
+  border: none;
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  color: #fff;
 }
