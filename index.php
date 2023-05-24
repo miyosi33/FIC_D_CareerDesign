@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="btn-box">
-      <a href="menu.html">
+      <a href="menu.php">
         View More
       </a>
     </div>
