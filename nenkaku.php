@@ -9,8 +9,6 @@
       RESERVE
     </h2>
     </div>
-
-    
     <div class="col-md-12">
 
         <div class="form_container">
@@ -22,7 +20,7 @@
             <input type="text" class="form-control" placeholder="Tel" />
             </div>
             <div>
-              <input type="text" class="form-control" placeholder="Email" />
+            <input type="text" class="form-control" placeholder="Email" />
             </div>
             <div class="btn_box">
             <button>
