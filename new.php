@@ -30,9 +30,9 @@
               <a href="login.php">
                   <button>
                     Register
-                  </a></button>
-                
-              </div>
+                  </button>
+              </a>
+            </div>
         </form>
         </div>
     
