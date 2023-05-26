@@ -37,7 +37,7 @@
           
             <div class="form_container">
               <div class="btn_box">
-                <a href="new.html">
+                <a href="new.php">
                   <button>
                     Regist
                   </button>
@@ -48,6 +48,5 @@
           </div>
 </div>
 </section>
-
 
 <?php require 'footer.php'; ?>
