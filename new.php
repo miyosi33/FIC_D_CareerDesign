@@ -12,7 +12,7 @@
     
     <div class="col-md-12">
 
-        <div class="form_container">
+        <d class="form_container">
         <form action="">
             <div>
             <input type="text" class="form-control" placeholder="Your Name" />
@@ -26,16 +26,21 @@
             <div>
               <input type="tel" class="form-control" placeholder="Phone Number" />
             </div>
+        </form>
+    
+        <div class="col-md-12">
+          
+          <div class="form_container">
             <div class="btn_box">
               <a href="login.php">
-                  <button>
-                    Register
-                  </button>
+                <button>
+                  Regist
+                </button>
               </a>
             </div>
-        </form>
+          </div>
+
         </div>
-    
     
 </section>
 <!-- end book section -->
