@@ -26,10 +26,13 @@
             <div>
               <input type="tel" class="form-control" placeholder="Phone Number" />
             </div>
-            <a class="btn_box">
-              <button>
-                Register
-              </button>
+            <div class="btn_box">
+              <a href="login.php">
+                  <button>
+                    Register
+                  </a></button>
+                
+              </div>
         </form>
         </div>
     
