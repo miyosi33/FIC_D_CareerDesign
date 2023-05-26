@@ -36,18 +36,6 @@ create table purchase_detail (
 	foreign key(product_id) references product(product_id)
 );
 
-
-create table zaseki(
-
-
-
-);
-
-/* まだ大丈夫b */
-create table DM(
-
-);
-
 insert into product values(null, 'クッキー', 120);
 insert into product values(null, 'クロワッサン', 200);
 insert into product values(null, 'いちごタルト', 400);
