@@ -107,7 +107,7 @@
                 echo 商品名;
                 echo '</h5>';
                 echo '<p>';
-                echo 商品詳細
+                echo 商品詳細;
                 echo '</p>';
                 echo '<div class="options">';
                 echo '<h6>';
