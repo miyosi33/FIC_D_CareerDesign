@@ -92,6 +92,36 @@
 
           <!-- 1 item -->
 
+          <?php
+            foreach($pdo->query('select * from 商品テーブル名') as $row){
+              if($row[おすすめ商品列]){
+                $id = $row['id'];
+                echo '<div class="col-sm-6 col-lg-4 all ', 商品ジャンル, '">';
+                echo '<div class="box">';
+                echo '<div>';
+                echo '<div class="img-box">';
+                echo '<img src="', 商品画像ファイル, '" alt="">';
+                echo '</div>';
+                echo '<div class="detail-box">';
+                echo '<h5>';
+                echo 商品名;
+                echo '</h5>';
+                echo '<p>';
+                echo 商品詳細
+                echo '</p>';
+                echo '<div class="options">';
+                echo '<h6>';
+                echo 値段,'円';
+                echo '</h6>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+              }
+            }
+          ?>
+
           <div class="col-sm-6 col-lg-4 all food">
             <div class="box">
               <div>
