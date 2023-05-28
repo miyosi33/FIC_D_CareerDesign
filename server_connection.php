@@ -1,3 +1,3 @@
 <?php
-$pdo =new PDO('mysql:host=localhost;dbname=sakuhin;charset=utf8', 'staff', 'password');
+$pdo =new PDO('mysql:host=localhost;dbname= DB名 ;charset=utf8', 'ユーザー', 'パスワード');
 ?>
