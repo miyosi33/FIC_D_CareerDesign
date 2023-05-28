@@ -22,7 +22,7 @@
             <input type="text" class="form-control" placeholder="Tel" />
             </div>
             <div>
-              <input type="text" class="form-control" placeholder="Email" />
+            <input type="text" class="form-control" placeholder="Email" />
             </div>
             <div class="btn_box">
             <button>
