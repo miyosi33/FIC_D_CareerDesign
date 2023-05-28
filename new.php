@@ -26,16 +26,16 @@
             <div>
               <input type="tel" class="form-control" placeholder="Phone Number" />
             </div>
+            </form>
             <div class="btn_box">
               <a href="login.php">
-                  <button>
-                    Register
-                  </a></button>
-                
-              </div>
-        </form>
+                <button>
+                Register
+                </button>
+              </a>
+        
         </div>
-    
+    </div>
     
 </section>
 <!-- end book section -->
