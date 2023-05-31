@@ -7,8 +7,17 @@ use kadai;
 create table product (
 	product_id int auto_increment primary key, 
 	product_name varchar(100) not null, 
-	product_price int not null
+	product_price int not null,
+	-- 商品ジャンル（food,ice_drink,hot_drink)
+	-- 画像ファイルパスの指定
+	-- 商品詳細（商品の紹介文、３００文字以内）
+	-- おすすめかどうか判別する（これだけbool）
+	product_genre varchar(50) not null,
+	image_path varchar(200) not null,
+	product_description varchar(300) not null,
+	is_featured bit not null
 );
+
 
 /* 顧客のやつ */ 
 create table customer (
@@ -21,7 +30,7 @@ create table customer (
 
 /* 購入 */
 create table purchase (
-	id int not null primary key, 
+	id int auto_increment not null primary key, 
 	customer_id int not null, 
 	foreign key(customer_id) references customer(id)
 );
@@ -64,5 +73,3 @@ insert into product values(null, 'オレンジジュース', 300);
 
 
 insert into customer values(null, '下道', '福岡市博多区中呉服町3-13', 'sita', 'sita');
-
-
