@@ -25,7 +25,6 @@
             </button>
             </div>
         </div>
-        <hr>
         <div class="heading_container chinchin">
           <h2>
             Register now
