@@ -12,6 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/logo.png" type="">
+  <link href="css\login.css" rel="stylesheet" type="text/css" media="all">
 
   <title> ~Shitamichi’s bakery~ </title>
 
