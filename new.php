@@ -26,18 +26,6 @@
             <div>
               <input type="tel" class="form-control" placeholder="Phone Number" />
             </div>
-<<<<<<< HEAD
-            </form>
-            <div class="btn_box">
-              <a href="login.php">
-                <button>
-                Register
-                </button>
-              </a>
-        
-        </div>
-    </div>
-=======
         </form>
     
         <div class="col-md-12">
@@ -53,7 +41,6 @@
           </div>
 
         </div>
->>>>>>> cc2cab5e838f82f91199b0b0f380207c50025cdc
     
 </section>
 <!-- end book section -->

@@ -1,4 +1,4 @@
-<?php // require 'server_connection.php'; ?>
+<?php require 'server_connection.php'; ?>
 <?php require 'header.php'; ?>
 
   <!-- food section -->
@@ -23,17 +23,17 @@
             <!-- 1 item -->
 
           <?php
-            foreach($pdo->query('select * from 商品テーブル名') as $row){
+            foreach($pdo->query('select * from product') as $row){
               $id = $row['id'];
-              echo '<div class="col-sm-6 col-lg-4 all ', 商品ジャンル, '">';
+              echo '<div class="col-sm-6 col-lg-4 all ', $row['product_genre'], '">';
               echo '<div class="box">';
               echo '<div>';
               echo '<div class="img-box">';
-              echo '<img src="', 商品画像ファイル, '">';
+              echo '<img src="', $row['image_path'], '">';
               echo '</div>';
               echo '<div class="detail-box">';
-              echo '<h5>', 商品名, '</h5>';
-              echo '<p>', 商品詳細, '</p>';
+              echo '<h5>', $row['product_name'], '</h5>';
+              echo '<p>', $row['product_description'], '</p>';
               echo '<div class="quanity-div">';
               echo '<form action="" class="quanity-form">';
               echo '<label class="quanity-label">';
@@ -53,7 +53,7 @@
               echo '</div>';
               echo '<div class="options">';
               echo '<h6>';
-              echo 値段, '円';
+              echo $row['product_price'], '円';
               echo '</h6>';
               echo '<a href="">';
               echo '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">';
