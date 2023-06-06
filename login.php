@@ -13,17 +13,19 @@
     <div class="col-md-12">
 
         <div class="form_container">
+          <form action="index.php" method="post">
             <div>
-            <input type="text" class="form-control" placeholder="Your Name" />
+              <input type="text" class="form-control" placeholder="Your Name" name="login"/>
             </div>
             <div>
-            <input type="text" class="form-control" placeholder="Password" />
+              <input type="text" class="form-control" placeholder="Password" name="password"/>
             </div>
             <a class="btn_box">
-            <button>
+              <button>
                 Login
-            </button>
+              </button>
             </div>
+          </form>
         </div>
         <div class="heading_container chinchin">
           <h2>
