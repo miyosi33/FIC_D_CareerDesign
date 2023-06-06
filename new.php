@@ -13,18 +13,18 @@
     <div class="col-md-12">
 
         <d class="form_container">
-        <form action="">
+        <form action="login.php" method="post">
             <div>
-            <input type="text" class="form-control" placeholder="Your Name" />
+            <input type="text" class="form-control" placeholder="Your Name" name="login"/>
             </div>
             <div>
-            <input type="password" class="form-control" placeholder="Password" />
+            <input type="password" class="form-control" placeholder="Password" name="password"/>
             </div>
             <div>
-            <input type="password" class="form-control" placeholder="Password" />
+            <input type="password" class="form-control" placeholder="Password" name="password"/>
             </div>
             <div>
-              <input type="tel" class="form-control" placeholder="Phone Number" />
+              <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
             </div>
         </form>
     
