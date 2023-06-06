@@ -35,19 +35,12 @@
               echo '<h5>', $row['product_name'], '</h5>';
               echo '<p>', $row['product_description'], '</p>';
               echo '<div class="quanity-div">';
-              echo '<form action="" class="quanity-form">';
+              echo '<form action="menu.php" class="quanity-form">';
               echo '<label class="quanity-label">';
               echo '<select name="quanity" class="quanity">';
-              echo '<option value="1">1</option>';
-              echo '<option value="2">2</option>';
-              echo '<option value="3">3</option>';
-              echo '<option value="4">4</option>';
-              echo '<option value="5">5</option>';
-              echo '<option value="6">6</option>';
-              echo '<option value="7">7</option>';
-              echo '<option value="8">8</option>';
-              echo '<option value="9">9</option>';
-              echo '<option value="10">10</option>';
+              for ($i=1; $i<=10; $i++) {
+                echo '<option value="', $i, '">', $i, '</option>';
+              }
               echo '</select>';
               echo '</form>';
               echo '</div>';
@@ -93,7 +86,7 @@
                     手作りタルト生地にカスタードとクリームを合わせたフランジパーヌ、きめ細やかなスポンジ、バニラビーンズソースを使った真っ白なミルクムースを重ね、真っ赤な完熟あまおうをすき間なく敷き詰めています。
                   </p>
                   <div class="quanity-div">
-                    <form action="" class="quanity-form">
+                    <form action="menu.php" class="quanity-form">
                       <label class="quanity-label">
                         <select name="quanity" class="quanity">
                           <option value="1">1</option>
