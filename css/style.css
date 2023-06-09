@@ -1035,3 +1035,9 @@ body {
 .detail-box > p {
   height: 150px;
 }
+.btn_box input {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  font: 16px;
+}
