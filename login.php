@@ -14,6 +14,7 @@
 
         <div class="form_container">
           <form action="index.php" method="post">
+            <input type="hidden" name="logform" value="logform">
             <div>
               <input type="text" class="form-control" placeholder="Your Name" name="login"/>
             </div>
@@ -21,10 +22,8 @@
               <input type="text" class="form-control" placeholder="Password" name="password"/>
             </div>
             <a class="btn_box">
-              <button>
-                Login
-              </button>
-            </div>
+              <button><input type="submit" value="LOGIN"></button>
+            </a>
           </form>
         </div>
         <div class="heading_container chinchin">

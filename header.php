@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -126,9 +127,40 @@
                         </g>
                       </svg>
                     </a>
-                    <a href="login.php" class="order_online">
-                      Login
-                    </a>
+                    <?php
+                    // login.phpからログインフォームが送信されてきたか
+                    if (isset($_REQUEST['logform'])) {
+                      // ログアウト
+                      unset($_SESSION['customer']);
+                      // データベースと接続
+                      $pdo=new PDO(
+                        'mysql:host=localhost;dbname=kadai;charset=utf8',
+                        'staff',
+                        'password'
+                      );
+                      $sql=$pdo->prepare('select * from customer where login=? and password=?');
+                      $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
+                      // idとパスワードが正しいか
+                      // 正しい場合ログイン
+                      foreach($sql as $row){
+                        $_SESSION['customer']=[
+                            'id'=>$row['id'],
+                            'login'=>$row['login'],
+                            'password'=>$row['password']
+                        ];
+                      }
+                    }
+                    // ログインしているか
+                    if (isset($_SESSION['customer'])) {
+                      echo '<a href="account.php" class="order_online">';
+                      echo 'Account';
+                      echo '</a>';
+                    } else {
+                      echo '<a href="login.php" class="order_online">';
+                      echo 'Login';
+                      echo '</a>';
+                    }
+                    ?>
                   </div>
                 </div>
               </nav>

@@ -12,21 +12,22 @@
     
     <div class="col-md-12">
 
-        <d class="form_container">
+        <div class="form_container">
         <form action="login.php" method="post">
             <div>
-            <input type="text" class="form-control" placeholder="Your Name" name="login"/>
+              <input type="text" class="form-control" placeholder="Your Name" name="login"/>
             </div>
             <div>
-            <input type="password" class="form-control" placeholder="Password" name="password"/>
+              <input type="password" class="form-control" placeholder="Password" name="password"/>
             </div>
             <div>
-            <input type="password" class="form-control" placeholder="Password" name="password"/>
+              <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password"/>
             </div>
             <div>
               <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
             </div>
         </form>
+</div>
     
         <div class="col-md-12">
           
