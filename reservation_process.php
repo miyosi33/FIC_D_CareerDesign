@@ -13,7 +13,7 @@ $reservation_number = generateReservationNumber();
 // 予約情報をデータベースに保存するなどの処理を追加する
 
 // 予約情報の表示
-echo "<h3>予約が完了しました</h3>";
+echo "<p>予約が完了しました</p>";
 echo "<p>予約番号: " . $reservation_number . "</p>";
 echo "<p>予約日時: " . $reservation_date . "</p>";
 echo "<p>座席の種類: " . $seat_type . "</p>";
