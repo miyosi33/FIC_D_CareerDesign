@@ -68,6 +68,9 @@
                     <li class="nav-item">
                       <a class="nav-link" href="zaseki1.php">enu</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="zaseki.php">enu</a>
+                    </li>
                   </ul>
                   <div class="user_option">
                     <a href="login.php" class="user_link">
