@@ -23,6 +23,23 @@ create table customer (
 	password varchar(100) not null
 );
 
+/* 購入 */
+create table purchase (
+	id int auto_increment not null primary key, 			--購入ID
+	customer_id int not null, 								--購入を行った顧客のID
+	foreign key(customer_id) references customer(id)		--外部キー　customerテーブルのid列を参照
+);
+
+/* 購入詳細 */
+create table purchase_detail (
+	purchase_id int not null, 								--購入ID
+	product_id int not null, 								--商品ID
+	count int not null, 									--個数
+	primary key(purchase_id, product_id), 					--主キー
+	foreign key(purchase_id) references purchase(id), 		--列を参照する外部キー制約
+	foreign key(product_id) references product(product_id)	--productテーブルのproduct_id列を参照する外部キー制約
+);
+
 -- 座席予約
 create table seat_reservation (
 	reservation_id int auto_increment primary key,
