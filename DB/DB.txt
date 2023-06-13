@@ -6,6 +6,35 @@
 座席が１、２，４から選択
 
 
+insert into product values(null, 'クッキー', 120);
+insert into product values(null, 'クロワッサン', 200);
+insert into product values(null, 'いちごタルト', 400);
+insert into product values(null, 'チョコタルト', 400);
+insert into product values(null, 'ショートケーキ', 400);
+insert into product values(null, 'チョコケーキ', 400);
+insert into product values(null, 'サンドイッチ', 300);
+insert into product values(null, 'パンケーキ', 500);
+insert into product values(null, 'フレンチトースト', 250);
+insert into product values(null, 'アイスレモンティー', 400);
+insert into product values(null, 'アイスミルクティー', 400);
+insert into product values(null, 'アイスティー', 400);
+insert into product values(null, 'レモンティー', 400);
+insert into product values(null, 'ミルクティー', 400);
+insert into product values(null, '紅茶', 400);
+insert into product values(null, 'アイスコーヒー', 350);
+insert into product values(null, 'ホットコーヒー', 350);
+insert into product values(null, 'アイスラテ', 400);
+insert into product values(null, 'ラテ', 400);
+insert into product values(null, 'アイスキャラメルラテ', 450);
+insert into product values(null, 'キャラメルラテ', 450);
+insert into product values(null, 'アイスココア', 450);
+insert into product values(null, 'ココア', 450);
+insert into product values(null, 'ホットチョコレート', 450);
+insert into product values(null, 'オレンジジュース', 300);
+
+
+
+
 
 insert into product values(null, 'クッキー', 120);
 insert into product values(null, 'クロワッサン', 200);
