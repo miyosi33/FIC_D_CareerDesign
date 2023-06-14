@@ -13,13 +13,16 @@
             <label for="reservation_date">予約日時:</label>
             <input type="datetime-local" id="reservation_date" name="reservation_date" required>
           </div>
+          <div class="kintama">
+          
+          </div>
           <div class="form-group">
-            <label for="seat_type">座席の種類:</label>
-            <select id="seat_type" name="seat_type" required>
+          <label for="seat_type">座席の種類:</label>
+              <select id="seat_type" name="seat_type" required>
               <option value="1人席">1人席</option>
               <option value="2人席">2人席</option>
               <option value="4人席">4人席</option>
-            </select>
+              </select>
           </div>
           <button type="submit">予約する</button>
         </form>

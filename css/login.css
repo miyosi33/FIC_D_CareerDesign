@@ -9,3 +9,24 @@
 .chinchin{
     padding-top: 90px; 
 }
+
+.A{
+    /* text-align: center; */
+    right: 20px;
+    width: 200px;
+    height: 100px;
+    max-width: 80vw;
+    min-width: 40vw;
+}
+.B{
+    text-align: center;
+    width: 200px;
+    height: 100px;
+}
+
+
+.m button{
+    margin: auto;
+    float: right;
+    margin-top: 30px;
+}
