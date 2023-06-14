@@ -7,16 +7,20 @@
       <div class="heading_container">
         <h2>RESERVE</h2>
         <?php
+        // ログイン状態の確認や他の必要な処理を追加
         ?>    
       </div>
       <div class="col-md-6">
-        <form action="" method="post">
+        <form action="reservation_pro.php" method="post">
           <div class="form-group">
             <label for="reservation_date">予約日時:</label>
             <input type="datetime-local" id="reservation_date" name="reservation_date" required>
           </div>
-
-        <buttton type="submit">予約する</button>
+          <div class="form-group">
+            <label for="">予約する商品</label>
+            
+          </div>
+          <buttton type="submit">予約する</button>
         </form>
       </div>
     </div>
