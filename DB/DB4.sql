@@ -59,7 +59,7 @@ create table product_reservation (
 	customer_id int not null,                           --予約を行った顧客のID（customerテーブルのid列を参照）
 	reservation_number varchar(100) not null unique,    -- 予約番号
 	foreign key (product_id) references product (product_id),--外部キー: productテーブルのproduct_id列を参照、customerテーブルのid列を参照
-	foreign key (customer_id) references customer (id)
+	foreign key (customer_id) references customer (id)z
 );
 
 
