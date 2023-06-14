@@ -1,32 +1,38 @@
 <?php require 'header.php'; ?>
 
 <?php
-// 他の必要な処理を追加する
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // フォームから送信されたデータを取得
+    $reservationDate = $_POST['reservation_date'];
+    $seatType = $_POST['seat_type'];
 
-// 予約情報の取得
-$reservation_date = $_POST['reservation_date'];
-$seat_type = $_POST['seat_type'];
+    // データベースに座席予約情報を保存する処理を追加する
+    // ここにデータベースへのデータ挿入処理を追加します
 
-// 予約番号の生成
-$reservation_number = generateReservationNumber();
+    // 予約が成功した場合の処理
+    echo"<br>";
+    echo "<br><p>予約が完了しました。</p>";
+    echo "予約日時：" . $reservationDate . "<br>";
+    echo "選択した座席：" . $seatType . "<br>";
 
-// 予約情報をデータベースに保存するなどの処理を追加する
+    // 予約した顧客の情報を取得
+    if (isset($_SESSION['customer_id'])) {
+        $customerId = $_SESSION['customer_id'];
+        // 顧客情報をデータベースから取得する処理を追加する
+        // $conn はデータベース接続オブジェクトとして仮定します
+        $sql = "SELECT name FROM customer WHERE id = $customerId";
+        $result = $conn->query($sql);
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $customerName = $row['name'];
+            echo "予約した名前：" . $customerName . "<br>";
+        }
+    } else {
+        // 顧客IDがセッションに存在しない場合の処理
+    }
 
-// 予約情報の表示
-echo"<p>はい</p>";
-echo "予約が完了しました";
-echo "<p>あああ予約番号: " . $reservation_number . "</p>";
-echo "<p>予約日時: " . $reservation_date . "</p>";
-echo "<p>座席の種類: " . $seat_type . "</p>";
-
-// 他の必要な処理を追加する
-
-// 予約番号を生成する関数の例
-function generateReservationNumber() {
-  // 予約番号の生成ロジックを実装する（一意性が保証されるようにする）
-  // 例: 現在のタイムスタンプを使用して一意の番号を生成するなど
-  // ここではランダムな番号を生成する例を示します
-  return uniqid();
+    // 予約が失敗した場合の処理
+    // echo "予約に失敗しました。";
 }
 ?>
 
