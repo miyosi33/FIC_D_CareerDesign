@@ -5,7 +5,7 @@
 
 //予約情報の取得
 $reservation_date = $_POST['reservation_date'];
-$reservation_date = $_POST['reservation_date'];
+$product_id = $_POST['product_id'];
 
 //予約番号の生成
 $reservation_number = generateReservationNumber();
