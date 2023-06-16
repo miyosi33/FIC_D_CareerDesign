@@ -21,7 +21,9 @@
         <option value="4人席">4人席</option>
       </select>
     </div>
+    <div class="m">
     <button type="submit">予約する</button>
+</div>
   </form>
 </div>
 
