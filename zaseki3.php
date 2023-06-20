@@ -1,4 +1,5 @@
 <?php require 'header1.php'; ?>
+
   <section class="book_section layout_padding">
     <div class="container1 tinntinn">
       <div class="heading_container">
@@ -8,13 +9,10 @@
         ?>
       </div>
       <div class="col-md-6">
-        <form action="reservation_process.php" method="post">
+        <form action="reservation.php" method="post">
           <div class="form-group">
             <label for="reservation_date">予約日時:</label>
             <input type="datetime-local" id="reservation_date" name="reservation_date" required>
-          </div>
-          <div class="kintama">
-          
           </div>
           <div class="form-group">
           <label for="seat_type">座席の種類:</label>
