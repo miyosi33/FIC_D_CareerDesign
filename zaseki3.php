@@ -1,4 +1,4 @@
-<?php require 'header.php'; ?>
+<?php require 'header1.php'; ?>
   <section class="book_section layout_padding">
     <div class="container1 tinntinn">
       <div class="heading_container">
@@ -66,4 +66,4 @@
       }
     });
   </script>
-  <?php require 'footer.php'; ?>
+  <?php require 'footer1.php'; ?>
