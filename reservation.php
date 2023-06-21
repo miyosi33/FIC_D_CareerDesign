@@ -1,22 +1,4 @@
 <?php require 'header.php'; ?>
-<style>
-    .V {
-        margin: 0 auto; /* 水平方向に中央揃え */
-        text-align: center; /* 内部の要素を中央揃え */
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-
-    .V p {
-        font-size: 32px;
-    }
-
-    .button {
-        text-align: center;
-        margin-top: 20px;
-    }
-</style>
-
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // フォームから送信されたデータを取得
