@@ -30,3 +30,9 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   
   footer.php のやつ、それを消したらできる。それぞれのページにheader.phpとfooter.phpをいれるか検討する
+
+<!-- <form action="index.php" method="post">
+    <div class="button">
+        <button type="submit">Homeに戻る</button>
+    </div>
+</form> -->
