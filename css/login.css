@@ -28,6 +28,7 @@
     text-align: center; /* 内部の要素を中央揃え */
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 10px;
 }
 
 .V p {
@@ -36,5 +37,6 @@
 
 .button {
     text-align: center;
-    margin-top: 20px;
+    margin: auto;
+    padding: 20px;
 }
