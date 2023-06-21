@@ -11,9 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // 予約が成功した場合の処理
     echo"<br>";
-    echo "<div class='V'><p>予約が完了しました。</p>";
-    echo "<p>予約日時：" . $reservationDate . "</p>";
-    echo "<p>選択した座席：" . $seatType . "</p></div>";
+    echo"<br>";
+    echo "<div class='V'><p>予約が完了しました!</p>";
+    echo "<p>予約日時：" . $reservationDate . "分です</p>";
+    echo "<p>選択した座席：" . $seatType . "になります。</p></div>";
 
     // // 予約した顧客の情報を取得
     // if (isset($_SESSION['customer_id'])) {
