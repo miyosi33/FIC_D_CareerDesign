@@ -3,46 +3,43 @@
 <!-- book section -->
 <section class="book_section layout_padding">
 <div class="container1 tinntinn">
-    <div class="heading_container">
+  <div class="heading_container">
     <h2>
         New
     </h2>
-    </div>
+  </div>
 
     
-    <div class="col-md-12">
+  <div class="col-md-12">
+    <div class="form_container">
+      <form action="login.php" method="post">
+        <input type="hidden" name="command" value="regist">
+        <div>
+          <input type="text" class="form-control" placeholder="Your Name" name="login"/>
+        </div>
+        <div>
+          <input type="password" class="form-control" placeholder="Password" name="password"/>
+        </div>
+        <div>
+          <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password"/>
+        </div>
+        <div>
+          <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
+        </div>
 
         <div class="form_container">
-        <form action="login.php" method="post">
-            <div>
-              <input type="text" class="form-control" placeholder="Your Name" name="login"/>
-            </div>
-            <div>
-              <input type="password" class="form-control" placeholder="Password" name="password"/>
-            </div>
-            <div>
-              <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password"/>
-            </div>
-            <div>
-              <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
-            </div>
-        </form>
-</div>
-    
-        <div class="col-md-12">
-          
-          <div class="form_container">
-            <div class="btn_box">
-              <a href="login.php">
-                <button>
-                  Regist
-                </button>
-              </a>
-            </div>
+          <div class="btn_box">
+            <a href="login.php">
+              <button>
+                <input type="submit" value="REGIST">
+              </button>
+            </a>
           </div>
-
         </div>
-    
+      </form>
+    </div>
+  </div>
+</div>
 </section>
 <!-- end book section -->
 
