@@ -1,4 +1,5 @@
 <?php require 'header.php'; ?>
+
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // フォームから送信されたデータを取得
@@ -32,10 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<form action="index.php" method="post">
-    <div class="button">
-        <button type="submit">Homeに戻る</button>
-    </div>
-</form>
+<!-- この部分のボタンのcssだけお願いします！ -->
+<div class="button">
+<a href="index.php" class="btn">Homeに戻る</a>
+</div>
 
 <?php require 'footer.php'; ?>
