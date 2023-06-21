@@ -15,7 +15,10 @@
       <form action="login.php" method="post">
         <input type="hidden" name="command" value="regist">
         <div>
-          <input type="text" class="form-control" placeholder="Your Name" name="login"/>
+          <input type="text" class="form-control" placeholder="Login Name" name="login"/>
+        </div>
+        <div>
+          <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
         </div>
         <div>
           <input type="password" class="form-control" placeholder="Password" name="password"/>
@@ -23,9 +26,7 @@
         <div>
           <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password"/>
         </div>
-        <div>
-          <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
-        </div>
+        
 
         <div class="form_container">
           <div class="btn_box">
