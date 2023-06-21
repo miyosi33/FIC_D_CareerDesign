@@ -31,7 +31,7 @@
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style2.css" rel="stylesheet" />
 
 </head>
 
