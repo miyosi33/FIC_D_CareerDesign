@@ -1,4 +1,12 @@
 <?php session_start(); ?>
+<?php 
+// データベースと接続
+$pdo=new PDO(
+  'mysql:host=localhost;dbname=kadai;charset=utf8',
+  'staff',
+  'password'
+);
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -66,7 +74,10 @@
                       <a class="nav-link" href="menu.php">Menu</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="zaseki3.php">座席予約</a>
+                      <a class="nav-link" href="zaseki1.php">enu</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="zaseki3.php">enu</a>
                     </li>
                   </ul>
                   <div class="user_option">
@@ -128,28 +139,35 @@
                       </svg>
                     </a>
                     <?php
-                    // login.phpからログインフォームが送信されてきたか
-                    if (isset($_REQUEST['logform'])) {
-                      // ログアウト
-                      unset($_SESSION['customer']);
-                      // データベースと接続
-                      $pdo=new PDO(
-                        'mysql:host=localhost;dbname=kadai;charset=utf8',
-                        'staff',
-                        'password'
-                      );
-                      $sql=$pdo->prepare('select * from customer where login=? and password=?');
-                      $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
-                      // idとパスワードが正しいか
-                      // 正しい場合ログイン
-                      foreach($sql as $row){
-                        $_SESSION['customer']=[
-                            'id'=>$row['id'],
-                            'login'=>$row['login'],
-                            'password'=>$row['password']
-                        ];
+                    // ログイン、ログアウト、新規会員登録の遷移されてきたか
+                    if (isset($_REQUEST['command'])) {
+                      switch ($_REQUEST['command']) {
+                        // ログイン
+                        case 'login':
+                          unset($_SESSION['customer']);
+                          $sql=$pdo->prepare('select * from customer where login=? and password=?');
+                          $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
+                          foreach($sql as $row){
+                            $_SESSION['customer']=[
+                                'id'        => $row['id'],
+                                'login'     => $row['login'],
+                                'password'  => $row['password']
+                            ];
+                          }
+                          break;
+                        
+                        // ログアウト
+                        case 'logout':
+                          unset($_SESSION['customer']);
+                          break;
+
+                        // 新規会員登録
+                        case 'regist':
+
+                          break;
                       }
                     }
+
                     // ログインしているか
                     if (isset($_SESSION['customer'])) {
                       echo '<a href="account.php" class="order_online">';
