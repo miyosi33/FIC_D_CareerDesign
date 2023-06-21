@@ -54,10 +54,10 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1 class="slider-title">
-                      三枚目
+                      ～予約について～
                     </h1>
                     <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
+                      予約は座席と商品のみの予約と別々になっています。座席は１人席、２人席、４人席　から選択できます。予約時間は平日と土日祝で多少時間が違います。ご了承ください。
                     </p>
                   </div>
                 </div>
