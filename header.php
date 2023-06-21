@@ -39,7 +39,7 @@ $pdo=new PDO(
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style2.css" rel="stylesheet" />
 
 </head>
 
@@ -74,10 +74,7 @@ $pdo=new PDO(
                       <a class="nav-link" href="menu.php">Menu</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="zaseki1.php">enu</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="zaseki3.php">enu</a>
+                      <a class="nav-link" href="zaseki3.php">座席予約</a>
                     </li>
                   </ul>
                   <div class="user_option">
@@ -163,7 +160,14 @@ $pdo=new PDO(
 
                         // 新規会員登録
                         case 'regist':
-
+                          if ($_REQUEST['password'] != $_REQUEST['confirm_password']) {
+                            break;
+                          }
+                          // 会員情報を新規登録する
+                          $sql=$pdo->prepare('insert into customer values(null,?,?,?,?)');
+                          $sql->execute([
+                            $_REQUEST['name'], $_REQUEST['address'], 
+                            $_REQUEST['login'], $_REQUEST['password']]);
                           break;
                       }
                     }
