@@ -1,7 +1,6 @@
 <?php require 'header1.php'; ?>
 
   <section class="book_section layout_padding">
-    <div class="container1 tinntinn">
       <div class="heading_container">
         <h2>座席予約</h2>
         <?php
@@ -25,7 +24,7 @@
           <button type="submit">予約する</button>
         </form>
       </div>
-    </div>
+
   </section>
   <!-- 他の必要なHTMLやJavaScriptのコードを追加 -->
   <script>
