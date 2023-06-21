@@ -14,7 +14,7 @@
 
         <div class="form_container">
           <form action="index.php" method="post">
-            <input type="hidden" name="logform" value="logform">
+            <input type="hidden" name="command" value="login">
             <div>
               <input type="text" class="form-control" placeholder="Your Name" name="login"/>
             </div>
