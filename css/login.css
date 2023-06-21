@@ -15,11 +15,11 @@
 .col-md-6 {
     text-align: center;
     margin: auto;
-  }
-  
-  h2{
+}
+
+h2{
     text-align: center;
-  }
+}
 
 
 /* reservation.phpのcssの部分 */
@@ -34,6 +34,7 @@
 .V p {
     font-size: 32px;
 }
+
 
 .button {
     text-align: center;
