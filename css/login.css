@@ -10,23 +10,31 @@
     padding-top: 90px; 
 }
 
-.A{
-    /* text-align: center; */
-    right: 20px;
-    width: 200px;
-    height: 100px;
-    max-width: 80vw;
-    min-width: 40vw;
-}
-.B{
+
+/* zaseki3.phpの部分 */
+.col-md-6 {
     text-align: center;
-    width: 200px;
-    height: 100px;
+    margin: auto;
+  }
+  
+  h2{
+    text-align: center;
+  }
+
+
+/* reservation.phpのcssの部分 */
+.V {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    text-align: center; /* 内部の要素を中央揃え */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+.V p {
+    font-size: 32px;
+}
 
-.m button{
-    margin: auto;
-    float: right;
-    margin-top: 30px;
+.button {
+    text-align: center;
+    margin-top: 20px;
 }
