@@ -1,92 +1,66 @@
-<?php require 'header.php'; ?>
+<?php require 'header1.php'; ?>
 
-<section class="book_section layout_padding">
-    <div class="container1 tinntinn">
-        <div class="heading_container">
-            <h2>座席予約</h2>
-        </div>
-        
+  <section class="book_section layout_padding">
+      <div class="heading_container">
+        <h2>座席予約</h2>
         <?php
-        // 座席予約の設定
-        // -- 予約人数
-        // -- 予約日時（予約時間は平日6:00～18:00,土日祝7:00~19:00
-        // -- 予約する商品
-        // -- 座席は１人席５つ、２人席３つ、４人席4つ
-        // -- 予約するユーザーID
-        // -- 予約番号（重複はしてはいけない）
-
-        // フォームが送信された場合の処理
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // 入力値を取得
-            $reservation_date = $_POST['reservation_date'];
-            $reservation_time = $_POST['reservation_time'];
-            $reservation_seat = $_POST['reservation_seat'];
-
-            // 予約番号を生成する関数
-            function generateReservationNumber() {
-                $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-                $reservation_number = '';
-
-                // 5文字のランダムな文字列を生成
-                for ($i = 0; $i < 5; $i++) {
-                    $reservation_number .= $characters[rand(0, strlen($characters) - 1)];
-                }
-
-                return $reservation_number;
-            }
-
-            // 予約番号を生成
-            $reservation_number = generateReservationNumber();
-
-            // データベースに予約情報を追加する処理を実行することができます
-
-            // 以下は仮のメッセージの表示です
-            echo "座席予約が完了しました。";
-            echo "予約番号: " . $reservation_number;
-        }
+        // ログイン状態の確認や他の必要な処理を追加する
         ?>
-        
-        <div class="col-md-12">
-            <div class="form_container">
-                <form method="POST">
-                    <!-- 予約フォームの入力項目を追加してください -->
-                    <div class="form-group">
-                        <label for="reservation_date">予約日</label>
-                        <input type="date" name="reservation_date" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reservation_time">予約時間</label>
-                        <select name="reservation_time" class="form-control" required>
-                            <?php
-                            // 予約可能な時間帯を生成（15分刻み）
-                            $start_time = strtotime('6:00');
-                            $end_time = strtotime('19:00');
-                            $interval = 15 * 60; // 15分を秒に変換
-                            for ($time = $start_time; $time <= $end_time; $time += $interval) {
-                                $formatted_time = date('H:i', $time);
-                                echo "<option value=\"$formatted_time\">$formatted_time</option>";
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="reservation_seat">予約座席</label>
-                        <select name="reservation_seat" class="form-control" required>
-                            <option value="1">1人席</option>
-                            <option value="2">2人席</option>
-                            <option value="4">4人席</option>
-                        </select>
-                    </div>
-                    
-                    <div class="btn_box">
-                        <button type="submit">予約する</button>
-                    </div>
-                </form>
-            </div>
-    
-            <div class="col-md-6">
-            </div>
-        </div>
-    </div>
-</section>
-<?php require 'footer.php'; ?>
+      </div>
+      <div class="col-md-6">
+        <form action="reservation.php" method="post">
+          <div class="form-group">
+            <label for="reservation_date">予約日時:</label>
+            <input type="datetime-local" id="reservation_date" name="reservation_date" required>
+          </div>
+          <div class="form-group">
+          <label for="seat_type">座席の種類:</label>
+              <select id="seat_type" name="seat_type" required>
+              <option value="1人席">1人席</option>
+              <option value="2人席">2人席</option>
+              <option value="4人席">4人席</option>
+              </select>
+          </div>
+          <button type="submit">予約する</button>
+        </form>
+      </div>
+
+  </section>
+  <!-- 他の必要なHTMLやJavaScriptのコードを追加 -->
+  <script>
+    const reservationDateInput = document.getElementById('reservation_date');
+    const reservationTimeStart = 6; // 平日の予約開始時間（時）
+    const reservationTimeEnd = 18; // 平日の予約終了時間（時）
+    const weekendReservationTimeStart = 7; // 土日祝の予約開始時間（時）
+    const weekendReservationTimeEnd = 19; // 土日祝の予約終了時間（時）
+    const reservationInterval = 15; // 予約時間帯の間隔（分）
+
+    reservationDateInput.addEventListener('input', function() {
+      const selectedDate = new Date(this.value);
+      const dayOfWeek = selectedDate.getDay();
+      const hour = selectedDate.getHours();
+      const minutes = selectedDate.getMinutes();
+
+      // 平日の予約時間帯制限
+      if (dayOfWeek >= 1 && dayOfWeek <= 5) {
+        if (hour < reservationTimeStart || hour > reservationTimeEnd) {
+          this.setCustomValidity('予約は平日' + reservationTimeStart + ':00~' + reservationTimeEnd + ':00の間で行ってください');
+        } else if (minutes % reservationInterval !== 0) {
+          this.setCustomValidity('予約時間帯は' + reservationInterval + '分刻みで選択してください');
+        } else {
+          this.setCustomValidity('');
+        }
+      }
+      // 土日祝の予約時間帯制限
+      else if (dayOfWeek === 0 || dayOfWeek === 6) {
+        if (hour < weekendReservationTimeStart || hour > weekendReservationTimeEnd) {
+          this.setCustomValidity('予約は土日祝' + weekendReservationTimeStart + ':00~' + weekendReservationTimeEnd + ':00の間で行ってください');
+        } else if (minutes % reservationInterval !== 0) {
+          this.setCustomValidity('予約時間帯は' + reservationInterval + '分刻みで選択してください');
+        } else {
+          this.setCustomValidity('');
+        }
+      }
+    });
+  </script>
+  <?php require 'footer1.php'; ?>
