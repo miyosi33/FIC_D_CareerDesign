@@ -41,3 +41,16 @@ h2{
     margin: auto;
     padding: 20px;
 }
+
+.Y {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    text-align: center; /* 内部の要素を中央揃え */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.Y p {
+    font-size: 24px;
+}
+
