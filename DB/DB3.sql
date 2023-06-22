@@ -63,4 +63,4 @@ create table product_reservation (
 insert into product values(null, 'クッキー', 120, 'food', '/path/to/image', 'クッキーの説明', 0);
 insert into product values(null, 'クロワッサン', 200, 'food', '/path/to/image', 'クロワッサンの説明', 0);
 
-insert into customer values(null, '下道', '福岡市博多区中呉服町3-13', 'sita', 'sita');
+insert into customer values(null, 'sita', '福岡市博多区中呉服町3-13', 'sita');
