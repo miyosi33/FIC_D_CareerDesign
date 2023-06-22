@@ -11,7 +11,7 @@
       echo "<div class='Y'><p>ログインしていません。<br>
       現在はログインしている方のみ予約できるようになっています。<br>会員登録無しでの予約につきましてはもうしばらくお待ちください。<br>
       下のボタンから会員登録をしてください</p></div>";
-      echo "<div class='button'>
+      echo "<div class='button2'>
             <a href='new.php' class='btn'>会員登録をする</a>
             </div>";
     }
