@@ -11,14 +11,16 @@
       echo "<div class='Y'><p>ログインしていません。<br>
       現在はログインしている方のみ予約できるようになっています。<br>会員登録無しでの予約につきましてはもうしばらくお待ちください。<br>
       下のボタンから会員登録をしてください</p></div>";
-      echo "<div class='button2'>
-            <a href='new.php' class='btn'>会員登録をする</a>
+      echo "<div class='button2 form_container'>
+              <button>
+                会員登録をする
+              </button>
             </div>";
     }
     ?>
   </div>
   <?php if (isset($_SESSION["customer"])) : ?>
-    <div class="col-md-6">
+    <div class="col-md-6 form_container">
       <form action="reservation.php" method="post">
         <div class="form-group">
           <label for="reservation_date">予約日時:</label>
