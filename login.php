@@ -16,7 +16,7 @@
           <form action="index.php" method="post">
             <input type="hidden" name="command" value="login">
             <div>
-              <input type="text" class="form-control" placeholder="Your Name" name="login"/>
+              <input type="text" class="form-control" placeholder="Your Name" name="name"/>
             </div>
             <div>
               <input type="text" class="form-control" placeholder="Password" name="password"/>
