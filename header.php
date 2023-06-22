@@ -39,7 +39,7 @@ $pdo=new PDO(
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/style2.css" rel="stylesheet" />
 
 </head>
 
@@ -146,16 +146,18 @@ $pdo=new PDO(
                     <?php
                     // ログイン、ログアウト、新規会員登録の遷移されてきたか
                     if (isset($_REQUEST['command'])) {
+                      echo $_REQUEST['command'];
+
                       switch ($_REQUEST['command']) {
                         // ログイン
                         case 'login':
                           unset($_SESSION['customer']);
-                          $sql=$pdo->prepare('select * from customer where login=? and password=?');
-                          $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
+                          $sql=$pdo->prepare('select * from customer where name=? and password=?');
+                          $sql->execute([$_REQUEST['name'], $_REQUEST['password']]);
                           foreach($sql as $row){
                             $_SESSION['customer']=[
                                 'id'        => $row['id'],
-                                'login'     => $row['login'],
+                                'name'     => $row['name'],
                                 'password'  => $row['password']
                             ];
                           }
@@ -168,14 +170,19 @@ $pdo=new PDO(
 
                         // 新規会員登録
                         case 'regist':
-                          if ($_REQUEST['password'] != $_REQUEST['confirm_password']) {
-                            break;
-                          }
+                          echo 'aaaaaaaaaaaaaaaaaaaaaaaa', $_REQUEST['name'];
+                          echo $_REQUEST['address'];
+                          echo $_REQUEST['password'];
+                          // if ($_REQUEST['password'] != $_REQUEST['confirm_password']) {
+                          //   break;
+                          // }
                           // 会員情報を新規登録する
-                          $sql=$pdo->prepare('insert into customer values(null,?,?,?,?)');
+                          $sql=$pdo->prepare('insert into customer values(null,?,?,?)');
                           $sql->execute([
-                            $_REQUEST['name'], $_REQUEST['address'], 
-                            $_REQUEST['login'], $_REQUEST['password']]);
+                            $_REQUEST['name'],
+                            $_REQUEST['address'],
+                            $_REQUEST['password']
+                          ]);
                           break;
                       }
                     }
