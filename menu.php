@@ -24,7 +24,6 @@
 
           <?php
             foreach($pdo->query('select * from product') as $row){
-              $id = $row['id'];
               echo '<div class="col-sm-6 col-lg-4 all ', $row['product_genre'], '">';
               echo '<div class="box">';
               echo '<div>';
@@ -42,6 +41,7 @@
                 echo '<option value="', $i, '">', $i, '</option>';
               }
               echo '</select>';
+              echo '個</label>';
               echo '</form>';
               echo '</div>';
               echo '<div class="options">';
