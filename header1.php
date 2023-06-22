@@ -1,4 +1,12 @@
 <?php session_start(); ?>
+<?php 
+// データベースと接続
+$pdo=new PDO(
+  'mysql:host=localhost;dbname=kadai;charset=utf8',
+  'staff',
+  'password'
+);
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
