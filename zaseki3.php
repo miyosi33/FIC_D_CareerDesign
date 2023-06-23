@@ -10,11 +10,16 @@
     } else {
       echo "<div class='Y'><p>ログインしていません。<br>
       現在はログインしている方のみ予約できるようになっています。<br>会員登録無しでの予約につきましてはもうしばらくお待ちください。<br>
-      下のボタンから会員登録をしてください</p></div>";
+      下のボタンから会員登録,またはログインしてください</p></div>";
       echo "<div class='button2 form_container'>
-              <button>
+      <a href='new.php'><button>
                 会員登録をする
-              </button>
+              </button></a>
+            </div>";
+      echo "<div class='button2 form_container'>
+      <a href='login.php'><button>
+                ログインする
+              </button></a>
             </div>";
     }
     ?>
