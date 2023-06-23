@@ -146,8 +146,6 @@ $pdo=new PDO(
                     <?php
                     // ログイン、ログアウト、新規会員登録の遷移されてきたか
                     if (isset($_REQUEST['command'])) {
-                      echo $_REQUEST['command'];
-
                       switch ($_REQUEST['command']) {
                         // ログイン
                         case 'login':
@@ -170,17 +168,14 @@ $pdo=new PDO(
 
                         // 新規会員登録
                         case 'regist':
-                          echo 'aaaaaaaaaaaaaaaaaaaaaaaa', $_REQUEST['name'];
-                          echo $_REQUEST['address'];
-                          echo $_REQUEST['password'];
-                          // if ($_REQUEST['password'] != $_REQUEST['confirm_password']) {
-                          //   break;
-                          // }
+                          if ($_REQUEST['password'] != $_REQUEST['confirm_password']) {
+                            break;
+                          }
                           // 会員情報を新規登録する
                           $sql=$pdo->prepare('insert into customer values(null,?,?,?)');
                           $sql->execute([
                             $_REQUEST['name'],
-                            $_REQUEST['address'],
+                            $_REQUEST['phone_number'],
                             $_REQUEST['password']
                           ]);
                           break;
