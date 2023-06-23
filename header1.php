@@ -78,17 +78,9 @@ $pdo=new PDO(
                     </li>
                   </ul>
                   <div class="user_option">
-                    <?php
-                    if (isset($_SESSION['customer'])) {
-                      echo '<a href="account.php" class="user_link">';
-                      echo '<i class="fa fa-user" aria-hidden="true"></i>';
-                      echo '</a>';
-                    } else {
-                      echo '<a href="login.php" class="user_link">';
-                      echo '<i class="fa fa-user" aria-hidden="true"></i>';
-                      echo '</a>';
-                    }
-                    ?>
+                    <a href="login.php" class="user_link">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                    </a>
                     <a class="cart_link" href="cart.php">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
@@ -144,44 +136,28 @@ $pdo=new PDO(
                       </svg>
                     </a>
                     <?php
-                    // ログイン、ログアウト、新規会員登録の遷移されてきたか
-                    if (isset($_REQUEST['command'])) {
-                      switch ($_REQUEST['command']) {
-                        // ログイン
-                        case 'login':
-                          unset($_SESSION['customer']);
-                          $sql=$pdo->prepare('select * from customer where name=? and password=?');
-                          $sql->execute([$_REQUEST['name'], $_REQUEST['password']]);
-                          foreach($sql as $row){
-                            $_SESSION['customer']=[
-                                'id'        => $row['id'],
-                                'name'     => $row['name'],
-                                'password'  => $row['password']
-                            ];
-                          }
-                          break;
-                        
-                        // ログアウト
-                        case 'logout':
-                          unset($_SESSION['customer']);
-                          break;
-
-                        // 新規会員登録
-                        case 'regist':
-                          if ($_REQUEST['password'] != $_REQUEST['confirm_password']) {
-                            break;
-                          }
-                          // 会員情報を新規登録する
-                          $sql=$pdo->prepare('insert into customer values(null,?,?,?)');
-                          $sql->execute([
-                            $_REQUEST['name'],
-                            $_REQUEST['phone_number'],
-                            $_REQUEST['password']
-                          ]);
-                          break;
+                    // login.phpからログインフォームが送信されてきたか
+                    if (isset($_REQUEST['logform'])) {
+                      // ログアウト
+                      unset($_SESSION['customer']);
+                      // データベースと接続
+                      $pdo=new PDO(
+                        'mysql:host=localhost;dbname=kadai;charset=utf8',
+                        'staff',
+                        'password'
+                      );
+                      $sql=$pdo->prepare('select * from customer where login=? and password=?');
+                      $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
+                      // idとパスワードが正しいか
+                      // 正しい場合ログイン
+                      foreach($sql as $row){
+                        $_SESSION['customer']=[
+                            'id'=>$row['id'],
+                            'login'=>$row['login'],
+                            'password'=>$row['password']
+                        ];
                       }
                     }
-
                     // ログインしているか
                     if (isset($_SESSION['customer'])) {
                       echo '<a href="account.php" class="order_online">';

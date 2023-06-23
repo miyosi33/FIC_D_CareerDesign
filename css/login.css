@@ -1,6 +1,5 @@
 .tinntinn{
     /* background-color: rgb(255, 0, 0); */
-    
     max-width: 80vw;
     min-width: 40vw;
     text-align: center;
@@ -10,23 +9,54 @@
     padding-top: 90px; 
 }
 
-.A{
-    /* text-align: center; */
-    right: 20px;
-    width: 200px;
-    height: 100px;
-    max-width: 80vw;
-    min-width: 40vw;
-}
-.B{
+
+/* zaseki3.phpの部分 */
+.col-md-6 {
     text-align: center;
-    width: 200px;
-    height: 100px;
-}
-
-
-.m button{
     margin: auto;
-    float: right;
-    margin-top: 30px;
 }
+
+h2{
+    text-align: center;
+}
+
+.Y {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    text-align: center; /* 内部の要素を中央揃え */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+}
+
+.Y p {
+    font-size: 24px;
+}
+
+.button2 {
+    text-align: center;
+    margin: auto;
+    /* padding: 10px; */
+}
+
+
+
+/* reservation.phpのcssの部分 */
+.V {
+    margin: 0 auto; /* 水平方向に中央揃え */
+    text-align: center; /* 内部の要素を中央揃え */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.V p {
+    font-size: 32px;
+}
+
+
+.button {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
