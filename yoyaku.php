@@ -1,30 +1,46 @@
-<?php // require 'server_connection.php'; ?>
 <?php require 'header.php'; ?>
 
-<!-- book section -->
   <section class="book_section layout_padding">
-    <div class="container1 tinntinn">
       <div class="heading_container">
-        <h2>RESERVE</h2>
+        <h2>商品予約</h2>
         <?php
         // ログイン状態の確認や他の必要な処理を追加
+        if (isset($_SESSION["customer"])) {
+          // ログインしているので予約できる。19行以降の処理をする
+        } else {
+          echo "<div class='Y'><p>ログインしていません。<br>
+          現在はログインしている方のみ予約できるようになっています。<br>会員登録無しでの予約につきましてはもうしばらくお待ちください。<br>
+          下のボタンから会員登録,またはログインしてください</p></div>";
+          echo "<div class='button2 form_container'>
+          <a href='new.php'><button>
+                    会員登録をする
+                  </button></a>
+                </div>";
+          echo "<div class='button2 form_container'>
+          <a href='login.php'><button>
+                    ログインする
+                  </button></a>
+                </div>";
+        }
         ?>    
       </div>
-      <div class="col-md-6">
-        <form action="reservation_pro.php" method="post">
-          <div class="form-group">
-            <label for="reservation_date">予約日時:</label>
-            <input type="datetime-local" id="reservation_date" name="reservation_date" required>
-          </div>
-          <div class="form-group">
-            <label for="">予約する商品</label>
+      <?php if (isset($_SESSION["customer"])) : ?>
+        <div class="col-md-6">
+          <form action="reservation_pro.php" method="post">
+            <div class="form-group">
+              <label for="reservation_date">予約日時:</label>
+              <input type="datetime-local" id="reservation_date" name="reservation_date" required>
+            </div>
+            <div class="form-group">
+              <label for="">予約する商品</label>
             
-          </div>
-          <buttton type="submit">予約する</button>
-        </form>
+            </div>
+            <buttton type="submit">予約する</button>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>  
+      <?php endif; ?>
+    </section>  
 
   <script>
     const reservationDateInput = document.getElementById('reservation_date');
