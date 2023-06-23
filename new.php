@@ -15,7 +15,7 @@
       <form action="login.php" method="post">
         <input type="hidden" name="command" value="regist">
         <div>
-          <input type="text" class="form-control" placeholder="Login Name" name="login"/>
+          <input type="text" class="form-control" placeholder="Login Name" name="name"/>
         </div>
         <div>
           <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
@@ -30,11 +30,9 @@
 
         <div class="form_container">
           <div class="btn_box">
-            <a href="login.php">
-              <button>
-                <input type="submit" value="REGIST">
-              </button>
-            </a>
+            <button>
+              <input type="submit" value="REGIST">
+            </button>
           </div>
         </div>
       </form>
