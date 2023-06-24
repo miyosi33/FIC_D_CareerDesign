@@ -1,4 +1,1 @@
-優先事項
-reservation.phpの37行からのボタンのcssの作成
-reservation.phpとzaseki3.phpの両端の空白部分をどうするか？
-あとはログインIDと連結してうごくかどうか
+メニューページをつくる
