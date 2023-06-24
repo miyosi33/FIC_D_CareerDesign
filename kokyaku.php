@@ -15,7 +15,7 @@
     echo '<table class="table">';
     echo '<thead>';
     echo '<tr>';
-	echo '<th scope="col">顧客ID</th><th scope="col">顧客の名前</th><th scope="col">顧客の情報</th><th scope="col">ログイン名</th><th scope="col">パスワード</th>';
+	echo '<th scope="col">顧客ID</th><th scope="col">顧客の名前</th><th scope="col">顧客の情報</th><th scope="col">パスワード</th>';
     echo '</tr>';
     echo '</thead>';
     $pdo=new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 
@@ -26,7 +26,6 @@
     	echo '<td>', $row['id'], '</td>';
     	echo '<td>', $row['name'], '</td>';
         echo '<td>', $row['address'], '</td>';
-        echo '<td>', $row['login'], '</td>';
         echo '<td>', $row['password'], '</td>';
     	echo '</tr>';
     	echo "\n";

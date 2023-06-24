@@ -1,75 +1,43 @@
-<?php // require 'server_connection.php'; ?>
 <?php require 'header.php'; ?>
 
-<!-- book section -->
-  <section class="book_section layout_padding">
-    <div class="container1 tinntinn">
-      <div class="heading_container">
-        <h2>RESERVE</h2>
-        <?php
-        // ログイン状態の確認や他の必要な処理を追加
-        ?>    
-      </div>
-      <div class="col-md-6">
-        <form action="reservation_pro.php" method="post">
-          <div class="form-group">
-            <label for="reservation_date">予約日時:</label>
-            <input type="datetime-local" id="reservation_date" name="reservation_date" required>
-          </div>
-          <div class="form-group">
-            <label for="">予約する商品</label>
-            
-          </div>
-          <buttton type="submit">予約する</button>
-        </form>
-      </div>
-    </div>
-  </section>  
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // フォームから送信されたデータを取得
+    $reservationDate = $_POST['reservation_date'];
+    $product_id = $_POST['product_id'];
 
-  <script>
-    const reservationDateInput = document.getElementById('reservation_date');
-    const reservationTimeStart = 6; // 平日の予約開始時間（時）
-    const reservationTimeEnd = 18; // 平日の予約終了時間（時）
-    const weekendReservationTimeStart = 7; // 土日祝の予約開始時間（時）
-    const weekendReservationTimeEnd = 19; // 土日祝の予約終了時間（時）
-    const reservationInterval = 15; // 予約時間帯の間隔（分）
+    // データベースに座席予約情報を保存する処理を追加する
+    // ここにデータベースへのデータ挿入処理を追加します
 
-    reservationDateInput.addEventListener('input', function() {
-      const selectedDate = new Date(this.value);
-      const dayOfWeek = selectedDate.getDay();
-      const hour = selectedDate.getHours();
-      const minutes = selectedDate.getMinutes();
+    // 予約が成功した場合の処理
+    echo"<br>";
+    echo"<br>";
+    echo "<div class='V'><p>予約が完了しました!</p>";
+    echo "<p>予約日時：" . $reservationDate . "分です</p>";
 
-      // 平日の予約時間帯制限
-      if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-        if (hour < reservationTimeStart || hour > reservationTimeEnd) {
-          this.setCustomValidity('予約は平日' + reservationTimeStart + ':00~' + reservationTimeEnd + ':00の間で行ってください');
-        } else if (minutes % reservationInterval !== 0) {
-          this.setCustomValidity('予約時間帯は' + reservationInterval + '分刻みで選択してください');
-        } else {
-          this.setCustomValidity('');
-        }
-      }
-      // 土日祝の予約時間帯制限
-      else if (dayOfWeek === 0 || dayOfWeek === 6) {
-        if (hour < weekendReservationTimeStart || hour > weekendReservationTimeEnd) {
-          this.setCustomValidity('予約は土日祝' + weekendReservationTimeStart + ':00~' + weekendReservationTimeEnd + ':00の間で行ってください');
-        } else if (minutes % reservationInterval !== 0) {
-          this.setCustomValidity('予約時間帯は' + reservationInterval + '分刻みで選択してください');
-        } else {
-          this.setCustomValidity('');
-        }
-      }
-    });
-  </script>
-  <?php require 'footer.php'; ?>
+    // // 予約した顧客の情報を取得
+    // if (isset($_SESSION['customer_id'])) {
+    //     $customerId = $_SESSION['customer_id'];
+    //     // 顧客情報をデータベースから取得する処理を追加する
+    //     // $conn はデータベース接続オブジェクトとして仮定します
+    //     $sql = "SELECT name FROM customer WHERE id = $customerId";
+    //     $result = $conn->query($sql);
+    //     if ($result && $result->num_rows > 0) {
+    //         $row = $result->fetch_assoc();
+    //         $customerName = $row['name'];
+    //         echo "予約した名前：" . $customerName . "<br>";
+    //     }
+    // } else {
+    //     // 顧客IDがセッションに存在しない場合の処理
+    // }
+}
+?>
 
-<!-- お客さんの予約したものの情報を店舗側に送るようにする　ログインした状態のとき
-    必要なもの
-    　予約番号
-    　予約の日時
-    　予約する商品
-    　顧客情報
-    　商品削除
+<!-- この部分のボタンのcssだけお願いします！ -->
+<div class="button form_container">
+    <a href="index.php" class="btn_box">
+        <button style="margin-top: 15px;border: none;text-transform: uppercase;display: inline-block;padding: 10px 55px;background-color: #ffbe33;color: #ffffff;border-radius: 45px;-webkit-transition: all 0.3s;transition: all 0.3s;border: none;">Homeに戻る</button>
+    </a>
+</div>
 
-    (お客さんが予約したものを店舗側で確認できるようにする) -->
+<?php require 'footer.php'; ?>
