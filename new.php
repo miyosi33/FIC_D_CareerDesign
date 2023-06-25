@@ -7,7 +7,6 @@
         New
     </h2>
   </div>
-
     
   <div class="col-md-12">
     <div class="form_container">

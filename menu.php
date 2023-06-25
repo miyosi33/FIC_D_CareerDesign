@@ -35,12 +35,9 @@
               echo '<p>', $row['product_description'], '</p>';
               echo '<div class="quanity-div">';
               echo '<form action="menu.php" class="quanity-form">';
+              echo '<input type="hidden" name="command" value="cart">';
               echo '<label class="quanity-label">';
-              echo '<select name="quanity" class="quanity">';
-              for ($i=1; $i<=10; $i++) {
-                echo '<option value="', $i, '">', $i, '</option>';
-              }
-              echo '</select>';
+              echo '<input type="number" name="count" value=1>';
               echo '個</label>';
               echo '</form>';
               echo '</div>';
@@ -76,7 +73,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="商品写真/フード/Strawberry-Tarts.png" alt="">
+                  <img src="product_images/food/Strawberry-Tarts.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -87,19 +84,9 @@
                   </p>
                   <div class="quanity-div">
                     <form action="menu.php" class="quanity-form">
+                      <input type="hidden" name="command" value="cart">
                       <label class="quanity-label">
-                        <select name="quanity" class="quanity">
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                        </select>
+                        <input type="number" name="count" value=1>
                       個</label>
                     </form>
                   </div>
