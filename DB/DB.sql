@@ -39,6 +39,7 @@ create table purchase_detail (
 	foreign key(product_id) references product(product_id)	
 );
 
+
 -- 座席予約
 create table seat_reservation (
 	reservation_id int auto_increment primary key,      
