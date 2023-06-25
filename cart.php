@@ -26,7 +26,7 @@
     </div>
     <?php if (isset($_SESSION["customer"])) : ?>
         <div class="col-md-6">
-            <form action="yoyaku.php" method="post">
+            <form action="Syoyaku.php" method="post">
             <div class="form-group">
               <label for="reservation_date">予約日時:</label>
               <input type="datetime-local" id="reservation_date" name="reservation_date" required>

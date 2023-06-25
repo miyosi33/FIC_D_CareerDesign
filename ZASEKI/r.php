@@ -48,6 +48,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <?php require 'footer.php'; ?>
-
-データベースに座席予約情報を保存する処理とデータの挿入処理を追加
-echoの部分で予約した会員の名前を表示

@@ -10,7 +10,7 @@ create table product (
 	product_price int not null,                 
 	product_genre varchar(50) not null,         
 	image_path varchar(200) not null,           
-	product_description varchar(300) not null,  
+	product_description varchar(500) not null,  
 	is_featured bit not null                    
 );
 

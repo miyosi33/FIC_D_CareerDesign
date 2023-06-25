@@ -8,13 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // データベースに座席予約情報を保存する処理を追加する
     // ここにデータベースへのデータ挿入処理を追加します
+    $pdo = new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 'staff', 'password');
+
+    $sql = $pdo->prepare("INSERT INTO seat_reservation (reservation_date, product_id, customer_id) VALUES (?, ?, ?)");
 
     // 予約が成功した場合の処理
     echo"<br>";
     echo"<br>";
     echo "<div class='V'><p>予約が完了しました!</p>";
     echo "<p>予約日時：" . $reservationDate . "分です</p>";
-    echo "予約した商品はマイページから確認できます。"
+    echo "予約した商品はマイページから確認してください。"
+    echo $product_id;
 
 }
 ?>
