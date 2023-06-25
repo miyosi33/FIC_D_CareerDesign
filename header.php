@@ -73,6 +73,7 @@ if (isset($_REQUEST['command'])) {
 
     // パスワード変更
     case 'password':
+      $flag = 1;
       $id = $_SESSION['customer']['id'];
       $sql=$pdo->prepare('select * from customer where id=?');
       $sql->execute([$id]);
@@ -80,26 +81,28 @@ if (isset($_REQUEST['command'])) {
         if ($row['password'] != $_REQUEST['password']) {
           $alert = "<script type='text/javascript'>alert('パスワードが間違っています');</script>";
           echo $alert;
-          break;
+          $flag = 0;
         }
       }
-      if ($_REQUEST['new_password'] != $_REQUEST['confirm_new_password']) {
-        $alert = "<script type='text/javascript'>alert('入力されたパスワードが一致しません');</script>";
-        echo $alert;
+      if ($flag) {
+        if ($_REQUEST['new_password'] != $_REQUEST['confirm_new_password']) {
+          $alert = "<script type='text/javascript'>alert('入力されたパスワードが一致しません');</script>";
+          echo $alert;
+          break;
+        }
+        $name = $_SESSION['customer']['name'];
+        $address = $_SESSION['customer']['address'];
+        $sql=$pdo->prepare('update customer set password=? where id=?');
+        $sql->execute([$_REQUEST['new_password'], $id]);
+        $_SESSION['customer']=[
+          'id'      =>$id,
+          'name'    =>$name,
+          'password'=>$_REQUEST['new_password'],
+          'address' =>$address
+        ];
         break;
       }
-      $name = $_SESSION['customer']['name'];
-      $address = $_SESSION['customer']['address'];
-      $sql=$pdo->prepare('update customer set password=? where id=?');
-      $sql->execute([$_REQUEST['new_password'], $id]);
-      $_SESSION['customer']=[
-        'id'      =>$id,
-        'name'    =>$name,
-        'password'=>$_REQUEST['new_password'],
-        'address' =>$address
-      ];
-      break;
-  }
+    }
 }
 ?>
 <!DOCTYPE html>

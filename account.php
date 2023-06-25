@@ -18,7 +18,7 @@
                     echo '<input type="hidden" name="password" value="', $_SESSION['customer']['password'], '">';
                     echo '<table>';
                     echo '<tr><td><label>Phone number</label></td>';
-                    echo '<td><input type="text" name="address" value="', $_SESSION['customer']['address'], '"></td>';
+                    echo '<td><input type="text" name="address" value="', $_SESSION['customer']['address'], '" required></td>';
                     echo '<td><button type="submit">変更</button></td></tr>';
                     echo '<tr><td><label>Password</label></td>';
                     echo '<td>';
