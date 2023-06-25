@@ -155,9 +155,13 @@ $pdo=new PDO(
                           foreach($sql as $row){
                             $_SESSION['customer']=[
                                 'id'        => $row['id'],
-                                'name'     => $row['name'],
+                                'name'      => $row['name'],
                                 'password'  => $row['password']
                             ];
+                          }
+                          if (!isset($_SESSION['customer'])) {
+                            $alert = "<script type='text/javascript'>alert('ログイン名もしくはパスワードが間違っています');</script>";
+                            echo $alert;
                           }
                           break;
                         
@@ -169,16 +173,26 @@ $pdo=new PDO(
                         // 新規会員登録
                         case 'regist':
                           if ($_REQUEST['password'] != $_REQUEST['confirm_password']) {
+                            $alert = "<script type='text/javascript'>alert('入力されたパスワードが不一致です');</script>";
+                            echo $alert;
                             break;
                           }
-                          // 会員情報を新規登録する
-                          $sql=$pdo->prepare('insert into customer values(null,?,?,?)');
-                          $sql->execute([
-                            $_REQUEST['name'],
-                            $_REQUEST['phone_number'],
-                            $_REQUEST['password']
-                          ]);
-                          break;
+                          // ログイン名の重複確認
+                          $sql=$pdo->prepare('select * from customer where name=?');
+                          $sql->execute([$_REQUEST['name']]);
+                          if (empty($sql->fetchAll())) {
+                            // 会員情報を新規登録する
+                            $sql=$pdo->prepare('insert into customer values(null,?,?,?)');
+                            $sql->execute([
+                              $_REQUEST['name'],
+                              $_REQUEST['phone_number'],
+                              $_REQUEST['password']
+                            ]);
+                            break;
+                          } else {
+                            $alert = "<script type='text/javascript'>alert('使用済みのログイン名です');</script>";
+                            echo $alert;
+                          }
                       }
                     }
 

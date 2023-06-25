@@ -16,10 +16,10 @@
           <form action="index.php" method="post">
             <input type="hidden" name="command" value="login">
             <div>
-              <input type="text" class="form-control" placeholder="Your Name" name="name"/>
+              <input type="text" class="form-control" placeholder="Your Name" name="name" required/>
             </div>
             <div>
-              <input type="text" class="form-control" placeholder="Password" name="password"/>
+              <input type="text" class="form-control" placeholder="Password" name="password" required/>
             </div>
             <a class="btn_box">
               <button><input type="submit" value="LOGIN"></button>

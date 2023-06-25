@@ -95,12 +95,12 @@
           <?php
             foreach($pdo->query('select * from product') as $row){
               if($row['is_featured']){
-                $id = $row['id'];
+                $id = $row['product_id'];
                 echo '<div class="col-sm-6 col-lg-4 all ', $row['product_genre'], '">';
                 echo '<div class="box">';
                 echo '<div>';
                 echo '<div class="img-box">';
-                echo '<img src="', $row['image_path'], '" alt="">';
+                echo '<img src="product_images/', $row['product_genre'], '/', $row['image_path'], '" alt="">';
                 echo '</div>';
                 echo '<div class="detail-box">';
                 echo '<h5>';
@@ -126,7 +126,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="商品写真/フード/Strawberry-Tarts.png" alt="">
+                  <img src="product_images/food/Strawberry-Tarts.png" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>

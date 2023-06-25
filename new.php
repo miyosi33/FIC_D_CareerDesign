@@ -15,16 +15,16 @@
       <form action="login.php" method="post">
         <input type="hidden" name="command" value="regist">
         <div>
-          <input type="text" class="form-control" placeholder="Login Name" name="name"/>
+          <input type="text" class="form-control" placeholder="Login Name" name="name" required/>
         </div>
         <div>
-          <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number"/>
+          <input type="tel" class="form-control" placeholder="Phone Number" name="phone_number" required/>
         </div>
         <div>
-          <input type="password" class="form-control" placeholder="Password" name="password"/>
+          <input type="password" class="form-control" placeholder="Password" name="password" required/>
         </div>
         <div>
-          <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password"/>
+          <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" required/>
         </div>
         
 

@@ -24,11 +24,12 @@
 
           <?php
             foreach($pdo->query('select * from product') as $row){
+              $id = $row['product_id'];
               echo '<div class="col-sm-6 col-lg-4 all ', $row['product_genre'], '">';
               echo '<div class="box">';
               echo '<div>';
               echo '<div class="img-box">';
-              echo '<img src="', $row['image_path'], '">';
+              echo '<img src="product_images/', $row['product_genre'], '/', $row['image_path'], '">';
               echo '</div>';
               echo '<div class="detail-box">';
               echo '<h5>', $row['product_name'], '</h5>';
