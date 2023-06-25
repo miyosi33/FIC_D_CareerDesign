@@ -156,7 +156,8 @@ $pdo=new PDO(
                             $_SESSION['customer']=[
                                 'id'        => $row['id'],
                                 'name'      => $row['name'],
-                                'password'  => $row['password']
+                                'password'  => $row['password'],
+                                'address'   => $row['address']
                             ];
                           }
                           if (!isset($_SESSION['customer'])) {
@@ -193,6 +194,20 @@ $pdo=new PDO(
                             $alert = "<script type='text/javascript'>alert('使用済みのログイン名です');</script>";
                             echo $alert;
                           }
+                          break;
+
+                        // 電話番号変更
+                        case 'address':
+                          $id = $_SESSION['customer']['id'];
+                          $sql=$pdo->prepare('update customer set address=? where id=?');
+                          $sql->execute([$_REQUEST['address'], $id]);
+                          $_SESSION['customer']=[
+                            'id'      =>$id,
+                            'name'    =>$_REQUEST['name'],
+                            'password'=>$_REQUEST['password'],
+                            'address' =>$_REQUEST['address'],
+                          ];
+                          break;
                       }
                     }
 

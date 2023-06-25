@@ -41,7 +41,7 @@ padding-left: 0;
 @media (max-width: 767px) {
 
   .about_section .detail-box,
-  .book_section .form_container {
+   .form_container {
     margin-bottom: 45px;
   }
 

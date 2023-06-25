@@ -31,10 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } 
 }
 ?>
-<div class="button form_container">
-    <a href="index.php" class="btn_box">
-        <button style="margin-top: 15px;border: none;text-transform: uppercase;display: inline-block;padding: 10px 55px;background-color: #ffbe33;color: #ffffff;border-radius: 45px;-webkit-transition: all 0.3s;transition: all 0.3s;border: none;">Homeに戻る</button>
-    </a>
-</div>
+<section class="book_section">
+    <div class="button form_container">
+        <a href="index.php" class="btn_box">
+            <button>Homeに戻る</button>
+        </a>
+    </div>
+</section>
 
 <?php require 'footer.php'; ?>

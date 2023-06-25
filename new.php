@@ -1,4 +1,3 @@
-<?php // require 'server_connection.php'; ?>
 <?php require 'header.php'; ?>
 <!-- book section -->
 <section class="book_section layout_padding">
