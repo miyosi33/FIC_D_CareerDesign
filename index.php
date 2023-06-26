@@ -121,29 +121,6 @@
             }
           ?>
 
-          <div class="col-sm-6 col-lg-4 all food">
-            <div class="box">
-              <div>
-                <div class="img-box">
-                  <img src="product_images/food/Strawberry-Tarts.png" alt="">
-                </div>
-                <div class="detail-box">
-                  <h5>
-                    いちごタルト
-                  </h5>
-                  <p>
-                    手作りタルト生地にカスタードとクリームを合わせたフランジパーヌ、きめ細やかなスポンジ、バニラビーンズソースを使った真っ白なミルクムースを重ね、真っ赤な完熟あまおうをすき間なく敷き詰めています。
-                  </p>
-                  <div class="options">
-                    <h6>
-                      400円
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- 1 item end -->
       </div>
     </div>
