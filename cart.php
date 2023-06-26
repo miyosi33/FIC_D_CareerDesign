@@ -2,44 +2,73 @@
 
 <section class="book_section layout_padding">
 <div class="heading_container">
-    <h2>My cart</h2>
+    <h2>Cart</h2>
     <?php
-        // ログイン状態の確認や他の必要な処理を追加
-        if (isset($_SESSION["customer"])) {
-          // ログインしているので予約できる。19行以降の処理をする
+        if (!empty($_SESSION['product'])) {
+          echo '<table>';
+          foreach ($_SESSION['product'] as $id=>$product) {
+            echo '<form action="cart.php" method="post">';
+            echo '<input type="hidden" name="command" value="cart_delete">';
+            echo '<input type="hidden" name="id" value="', $id, '">';
+            echo '<tr>';
+            echo '<td>', $product['name'], '</td>';
+            echo '<td>', $product['price'], '</td>';
+            echo '<td>', $product['count'], '</td>';
+            echo '<td><button type="submit">カートから削除</button></td>';
+            echo '</tr>';
+            echo '</form>';
+          }
+          echo '</table>';
+          if (isset($_SESSION['customer'])) {
+            echo '<div class="col-md-6">';
+            echo '<form action="Syoyaku.php" method="post">';
+            echo '<div class="form-group">';
+            echo '<label for="reservation_date">予約日時:</label>';
+            echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required>';
+            echo '</div>';
+            echo '<buttton type="submit">予約する</button>';
+            echo '</form>';
+            echo '</div>';
+          } else {
+            echo '';
+          }
         } else {
-          echo "<div class='Y'><p>ログインしていません。<br>
-          現在はログインしている方のみ予約できるようになっています。<br>会員登録無しでの予約につきましてはもうしばらくお待ちください。<br>
-          下のボタンから会員登録,またはログインしてください</p></div>";
-          echo "<div class='button2 form_container'>
-          <a href='new.php'><button>
-                    会員登録をする
-                  </button></a>
-                </div>";
-          echo "<div class='button2 form_container'>
-          <a href='login.php'><button>
-                    ログインする
-                  </button></a>
-                </div>";
+          echo 'カートに商品がありません';
         }
-        ?>   
-    </div>
-    <?php if (isset($_SESSION["customer"])) : ?>
-        <div class="col-md-6">
-            <form action="Syoyaku.php" method="post">
-            <div class="form-group">
-              <label for="reservation_date">予約日時:</label>
-              <input type="datetime-local" id="reservation_date" name="reservation_date" required>
-            </div>
-            <div class="form-group">
-              <label for="">予約する商品</label>
-            
-            </div>
-            <buttton type="submit">予約する</button>
-            </form>
-          </div>
+
+
+
+        // // ログイン状態の確認や他の必要な処理を追加
+        // if (isset($_SESSION["customer"])) {
+        //   // ログインしているので予約できる。19行以降の処理をする
+        // } else {
+        //   echo "<div class='Y'><p>ログインしていません。<br>
+        //   現在はログインしている方のみ予約できるようになっています。<br>会員登録無しでの予約につきましてはもうしばらくお待ちください。<br>
+        //   下のボタンから会員登録,またはログインしてください</p></div>";
+        //   echo "<div class='button2 form_container'>
+        //   <a href='new.php'><button>
+        //             会員登録をする
+        //           </button></a>
+        //         </div>";
+        //   echo "<div class='button2 form_container'>
+        //   <a href='login.php'><button>
+        //             ログインする
+        //           </button></a>
+        //         </div>";
+        // }
+    ?>   
+    <?php if (!isset($_SESSION["customer"])) : ?>
+    <div class="col-md-6">
+      <form action="Syoyaku.php" method="post">
+        <div class="form-group">
+          <label for="reservation_date">予約日時:</label>
+          <input type="datetime-local" id="reservation_date" name="reservation_date" required>
         </div>
+        <buttton type="submit">予約する</button>
+      </form>
+    </div>
     <?php endif; ?>
+</div>
 </section>
 
 <script>
