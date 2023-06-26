@@ -26,6 +26,7 @@
     ?>
   </div>
   <?php if (isset($_SESSION["customer"])) : ?>
+    <p>予約できる日時は平日6:00</p>
     <div class="col-md-6 form_container">
       <form action="reservation.php" method="post">
         <div class="form-group">
