@@ -28,6 +28,7 @@
                     echo '</td>';
                     echo '<td><a href="change_pass.php"><button type="button" onclick="location.href=\'change_pass.php\'">変更</button></a></td></tr>';
                     echo '</table>';
+                    
                     ?>
                 </form>
             </div>
