@@ -30,3 +30,6 @@ FIC_D_CAREERDESIGN
 
 カートページ
 
+
+index.phpの写真のパスの変更をする
+フォルダはproduct_imagesのShitamichi_images
