@@ -1,3 +1,4 @@
+<?php require 'server_connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +19,6 @@
 	echo '<th scope="col">顧客ID</th><th scope="col">顧客の名前</th><th scope="col">顧客の情報</th><th scope="col">パスワード</th>';
     echo '</tr>';
     echo '</thead>';
-    $pdo=new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 
-    	'staff', 'password');
     foreach ($pdo->query('select * from customer') as $row) {
         echo '<tbody>';
     	echo '<tr>';

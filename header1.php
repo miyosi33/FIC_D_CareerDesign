@@ -1,12 +1,5 @@
 <?php session_start(); ?>
-<?php 
-// データベースと接続
-$pdo=new PDO(
-  'mysql:host=localhost;dbname=kadai;charset=utf8',
-  'staff',
-  'password'
-);
-?>
+<?php require 'server_connection.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -140,12 +133,6 @@ $pdo=new PDO(
                     if (isset($_REQUEST['logform'])) {
                       // ログアウト
                       unset($_SESSION['customer']);
-                      // データベースと接続
-                      $pdo=new PDO(
-                        'mysql:host=localhost;dbname=kadai;charset=utf8',
-                        'staff',
-                        'password'
-                      );
                       $sql=$pdo->prepare('select * from customer where login=? and password=?');
                       $sql->execute([$_REQUEST['login'], $_REQUEST['password']]);
                       // idとパスワードが正しいか

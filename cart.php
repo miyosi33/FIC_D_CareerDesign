@@ -33,16 +33,15 @@
             echo '<div class="col-md-6">';
             echo '<p>予約するにはログインする必要があります</p>';
             echo '<div class="button2 form_container">';
-            echo '<a href="new.php"><button>';
+            echo '<a href="login.php"><button class="gan">';
+            echo 'ログインする';
+            echo '</button></a>';
+            echo '<a href="new.php"><button class="gan">';
             echo '会員登録をする';
             echo '</button></a>';
             echo '</div>';
             echo '</div>';
-            echo '<div class="button2 form_container">';
-            echo '<a href="login.php"><button>';
-            echo 'ログインする';
-            echo '</button></a>';
-            echo '</div>';
+
           }
         } else {
           echo 'カートに商品がありません';
