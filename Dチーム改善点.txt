@@ -6,8 +6,6 @@ index.htmlの文字
 
 DBのproductテーブルimage_path列には画像のファイル名のみに（例：Cookie.jpg）
 
-DBのproductテーブルproduct_genre列には「food」「ice_drink」「hot_drink」の3種類に
-
 画像フォルダの構成を以下のように
 FIC_D_CAREERDESIGN
 	|
@@ -31,6 +29,4 @@ FIC_D_CAREERDESIGN
 
 
 カートページ
-
-メニューの個数選択
 
