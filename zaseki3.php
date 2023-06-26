@@ -32,7 +32,7 @@
       <form action="reservation.php" method="post">
         <div class="form-group">
           <label for="reservation_date">予約日時:</label>
-          <input type="datetime-local" id="reservation_date" name="reservation_date" required>
+          <input type="datetime-local" id="reservation_date" name="reservation_date" required min="<?php echo date('Y-m-d\TH:i', strtotime('+1 days')); ?>">
         </div>
         <div class="form-group">
           <label for="seat_type">座席の種類:</label>

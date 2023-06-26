@@ -28,7 +28,6 @@
                     echo '</td>';
                     echo '<td><a href="change_pass.php"><button type="button" onclick="location.href=\'change_pass.php\'">変更</button></a></td></tr>';
                     echo '</table>';
-                    
                     ?>
                 </form>
             </div>
@@ -40,6 +39,14 @@
                     </div>
                 </form>
             </div>
+            <?php
+                foreach ($pdo->query('select * from seat_reservation') as $row) {
+                                    echo "座席予約<br>";
+                                        echo "予約時刻：". $row['reservation_date'];
+                                        echo  "座席:".$row['seat_type'];
+                                    echo "\n";
+                                }
+                                ?>
         </div>
     </div>
 </section>
