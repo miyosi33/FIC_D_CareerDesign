@@ -26,6 +26,9 @@
   </div>
   <?php if (isset($_SESSION["customer"])) : ?>
     <div class="col-md-6 form_container">
+      <div class="Y">
+        <p>予約できる日時は平日6:00am～6:00pm,<br>土日祝7:00am～7:00pmで15分刻みとなります。<br>
+            予約は1日前からとなっており、<br>当日予約は受け付けておりません。</p></div>
       <form action="reservation.php" method="post">
         <div class="form-group">
           <label for="reservation_date">予約日時:</label>
