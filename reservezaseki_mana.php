@@ -10,7 +10,6 @@
 
 <div class="m-5">
 
-    
     <?php
     echo '<table class="table">';
     echo '<thead>';
@@ -18,8 +17,7 @@
 	echo '<th scope="col">予約番号</th><th scope="col">日時</th><th scope="col">予約席</th><th scope="col">顧客ID</th>';
     echo '</tr>';
     echo '</thead>';
-    $pdo=new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 
-    	'staff', 'password');
+    $pdo=new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 'staff', 'password');
     foreach ($pdo->query('select * from seat_reservation') as $row) {
         echo '<tbody>';
     	echo '<tr>';
