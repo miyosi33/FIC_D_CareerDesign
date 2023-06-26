@@ -1,0 +1,36 @@
+index.htmlの文字
+
+画像たちのフォルダ名、ファイル名をすべてアルファベットと記号だけ（日本語を使わない名前）に変更
+↓
+それにともなってデータベースの画像パスの部分もすべてそろえる
+
+DBのproductテーブルimage_path列には画像のファイル名のみに（例：Cookie.jpg）
+
+DBのproductテーブルproduct_genre列には「food」「ice_drink」「hot_drink」の3種類に
+
+画像フォルダの構成を以下のように
+FIC_D_CAREERDESIGN
+	|
+	|----product_images
+		|
+		|----food
+		|	|
+		|	|----Cookie.jpg
+		|
+		|
+		|----ice_drink
+		|	|
+		|	|----IceLemonTea.jpg
+		|
+		|
+		|----hot_drink
+		|	|
+		|	|----LemonTea.jpg
+
+
+
+
+カートページ
+
+メニューの個数選択
+
