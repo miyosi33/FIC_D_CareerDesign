@@ -34,18 +34,21 @@
               echo '<h5>', $row['product_name'], '</h5>';
               echo '<p>', $row['product_description'], '</p>';
               echo '<div class="quanity-div">';
-              echo '<form action="menu.php" class="quanity-form">';
+              echo '<form action="cart.php" class="quanity-form">';
               echo '<input type="hidden" name="command" value="cart">';
+              echo '<input type="hidden" name="id" value="', $id, '">';
+              echo '<input type="hidden" name="name" value="', $row['product_name'], '">';
+              echo '<input type="hidden" name="price" value="', $row['product_price'], '">';
               echo '<label class="quanity-label">';
-              echo '<input type="number" name="count" value=1>';
+              echo '<input type="number" name="count" value=1 required>';
               echo '個</label>';
-              echo '</form>';
               echo '</div>';
               echo '<div class="options">';
               echo '<h6>';
               echo $row['product_price'], '円';
               echo '</h6>';
               echo '<a href="">';
+              echo '<button type="submit" class="cart_input">';
               echo '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">';
               echo '<g>';
               echo '<g>';
@@ -64,7 +67,9 @@
               echo '</g>';
               echo '<g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>';
               echo '</svg>';
+              echo '</button>';
               echo '</a>';
+              echo '</form>';
               echo '</div></div></div></div></div>';
             }
           ?>
@@ -85,16 +90,19 @@
                   <div class="quanity-div">
                     <form action="menu.php" class="quanity-form">
                       <input type="hidden" name="command" value="cart">
+                      <input type="hidden" name="id" value="1">
+                      <input type="hidden" name="name" value="いちごタルト">
+                      <input type="hidden" name="price" value="400">
                       <label class="quanity-label">
-                        <input type="number" name="count" value=1>
+                        <input type="number" name="count" value=1 required>
                       個</label>
-                    </form>
                   </div>
                   <div class="options">
                     <h6>
                       400円
                     </h6>
                     <a href="">
+                      <button type="submit" class="cart_input">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
@@ -147,7 +155,9 @@
                         <g>
                         </g>
                       </svg>
+                      </button>
                     </a>
+                    </form>
                   </div>
                 </div>
               </div>
