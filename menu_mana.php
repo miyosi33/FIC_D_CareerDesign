@@ -34,7 +34,7 @@
     echo '</tbody>';
     echo '</table>';
     ?>
-</table>
+
 </div>
 
 </body>

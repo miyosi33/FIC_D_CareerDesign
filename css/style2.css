@@ -1063,3 +1063,11 @@ body {
 .tinko {
     text-align: center;
 }
+
+.cart_input {
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+    width: 40px;
+    height: 40px;
+}

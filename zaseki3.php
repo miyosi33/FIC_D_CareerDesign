@@ -32,8 +32,7 @@
       <form action="reservation.php" method="post">
         <div class="form-group">
           <label for="reservation_date">予約日時:</label>
-            <!-- min属性、時間の指定をする事ができる。strtotime() 関数を使用して現在の日付から1日後の日付を計算 -->
-          <input type="datetime-local" id="reservation_date" name="reservation_date" required min="<?php echo date('Y-m-d\TH:i', strtotime('+1 days')); ?>">
+          <input type="datetime-local" id="reservation_date" name="reservation_date" required>
         </div>
         <div class="form-group">
           <label for="seat_type">座席の種類:</label>
@@ -49,7 +48,7 @@
   <?php endif; ?>
 </section>
 
-<!-- JavaScriptのコードを追加 -->
+<!-- 他の必要なHTMLやJavaScriptのコードを追加 -->
 <script>
   const reservationDateInput = document.getElementById("reservation_date");
   const reservationTimeStart = 6; // 平日の予約開始時間（時）
@@ -63,7 +62,7 @@
     const dayOfWeek = selectedDate.getDay();
     const hour = selectedDate.getHours();
     const minutes = selectedDate.getMinutes();
-    
+
     // 平日の予約時間帯制限
     if (dayOfWeek >= 1 && dayOfWeek <= 5) {
       if (hour < reservationTimeStart || hour > reservationTimeEnd) {
@@ -86,4 +85,5 @@
     }
   });
 </script>
+
 <?php require "footer1.php"; ?>

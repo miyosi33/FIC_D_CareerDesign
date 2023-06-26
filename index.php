@@ -5,7 +5,7 @@
   <div class="hero_area">
     <div class="bg-box">
       <!--トップページの写真-->
-      <img src="images/Coffee-and-Pastries.png" alt="">
+      <img src="Shitamichi_images/Coffee-and-Pastries.png" alt="">
     </div>
     <!-- header section strats -->
     

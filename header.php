@@ -102,6 +102,25 @@ if (isset($_REQUEST['command'])) {
         ];
         break;
       }
+      break;
+    // カート
+    case 'cart':
+      $id = $_REQUEST['id'];
+      if (!isset($_SESSION['product'])) {
+        $_SESSION['product']=[];
+      }
+      $count=0;
+      if (isset($_SESSION['product'][$id])) {
+        $count=$_SESSION['product'][$id]['count'];
+      }
+      $_SESSION['product'][$id]=[
+        'name' => $_REQUEST['name'],
+        'price'=> $_REQUEST['price'],
+        'count'=> $count + $_REQUEST['count']
+      ];
+      break;
+    case 'cart_delete':
+      unset($_SESSION['product'][$_REQUEST['id']]);
     }
 }
 ?>
@@ -118,7 +137,7 @@ if (isset($_REQUEST['command'])) {
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/logo.png" type="">
+  <link rel="shortcut icon" href="Shitamichi_images/logo.png" type="">
   <link href="css\login.css" rel="stylesheet" type="text/css" media="all">
 
   <title> ~Shitamichi’s bakery~ </title>

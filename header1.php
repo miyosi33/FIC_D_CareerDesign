@@ -20,7 +20,7 @@ $pdo=new PDO(
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/logo.png" type="">
+  <link rel="shortcut icon" href="Shitamichi_images/logo.png" type="">
   <link href="css\login.css" rel="stylesheet" type="text/css" media="all">
 
   <title> ~Shitamichi’s bakery~ </title>
@@ -67,7 +67,7 @@ $pdo=new PDO(
     
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav  mx-auto ">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                       <a class="nav-link" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
