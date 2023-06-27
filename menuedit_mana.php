@@ -1,3 +1,4 @@
+<?php require 'server_connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,6 @@ echo '<tr>';
 echo '<th scope="col">商品番号</th><th scope="col">名前</th><th scope="col">値段</th><th scope="col">種類</th><th scope="col">説明</th><th scope="col"></th><th scope="col"></th>';
 echo '</tr>';
 echo '</thead>';
-$pdo=new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 
-	'staff', 'password');
-
 if (isset($_REQUEST['command'])) {
 	switch ($_REQUEST['command']) {
 

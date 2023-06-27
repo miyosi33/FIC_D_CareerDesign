@@ -1,3 +1,4 @@
+<?php require 'server_connection.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +29,6 @@
 if (isset($_SESSION['customer'])) {
 	echo '<table>';
 	echo '<th>タイトル</th><th>所持数</th><th>出版社</th><th>作者</th>';
-	$pdo=new PDO('mysql:host=localhost;dbname=book;charset=utf8', 
-		'staff', 'password');
 	$sql=$pdo->prepare('select * from mybook, library '.
 		'where customer_id=? and library_id=id');
 	$sql->execute([$_SESSION['customer']['id']]);

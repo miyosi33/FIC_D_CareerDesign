@@ -1,11 +1,5 @@
 <?php session_start(); ?>
-<?php 
-// データベースと接続
-$pdo=new PDO(
-  'mysql:host=localhost;dbname=kadai;charset=utf8',
-  'staff',
-  'password'
-);
+<?php require 'server_connection.php'; 
 // ログイン、ログアウト、新規会員登録の遷移されてきたか
 if (isset($_REQUEST['command'])) {
   switch ($_REQUEST['command']) {

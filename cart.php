@@ -20,29 +20,28 @@
           }
           echo '</table>';
           if (isset($_SESSION['customer'])) {
-            echo '<div class="col-md-6 form_container">';
+            echo '<div class="form_container col-md-6">';
             echo '<form action="Syoyaku.php" method="post">';
             echo '<div class="form-group">';
             echo '<label for="reservation_date">予約日時:</label>';
             echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required>';
             echo '</div>';
-            echo '<buttton type="submit">予約する</button>';
+            echo '<button type="submit">予約する</button>';
             echo '</form>';
             echo '</div>';
           } else {
             echo '<div class="col-md-6">';
             echo '<p>予約するにはログインする必要があります</p>';
             echo '<div class="button2 form_container">';
-            echo '<a href="new.php"><button>';
+            echo '<a href="login.php"><button class="gan">';
+            echo 'ログインする';
+            echo '</button></a>';
+            echo '<a href="new.php"><button class="gan">';
             echo '会員登録をする';
             echo '</button></a>';
             echo '</div>';
             echo '</div>';
-            echo '<div class="button2 form_container">';
-            echo '<a href="login.php"><button>';
-            echo 'ログインする';
-            echo '</button></a>';
-            echo '</div>';
+
           }
         } else {
           echo 'カートに商品がありません';
