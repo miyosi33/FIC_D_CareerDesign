@@ -30,3 +30,7 @@ FIC_D_CAREERDESIGN
 
 カートページ
 
+
+お知らせについて
+header.phpの194行目のリンクについてcssの適応でaタグの処理をどうするか？
+dm_mana.phpのデザインをお願いします。
