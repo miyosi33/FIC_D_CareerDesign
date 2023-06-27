@@ -29,6 +29,8 @@ create table dm (
     title varchar(100) not null,
     content varchar(500) not null,
     TimeStamp_id TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    customer_id int,
+    foreign key (customer_id) references customer (customer_id)
 );
 
 
