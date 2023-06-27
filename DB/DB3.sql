@@ -23,14 +23,16 @@ create table customer (
 );
 
 
---  DMは発送
+/* DMは発送 */
 create table dm (
-    txt varchar(500),
-    customer_id int not null,
-    foreign key (customer_id) references customer(id)
+    dm_id int auto_increment primary key,
+    title varchar(100) not null,
+    content varchar(500) not null
+);
 
-)
 
 insert into product values(null, 'クッキー', 120, 'food', 'Cookie.jpg', '小麦の香ばしさが感じられるよう、全粒粉の生地にバターを練り込み、ソフトな食感に焼き上げたクッキーです。砂糖の一部にブラウンシュガーを使い、コクのある甘さをプラスしています。', 1);
 
 insert into customer values(null, 'sita', '福岡市博多区中呉服町3-13', 'sita');
+
+insert into dm (title, content) values ('重要なお知らせ', 'これは重要なお知らせです。');
