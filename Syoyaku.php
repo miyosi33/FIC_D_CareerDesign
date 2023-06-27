@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo"<br>";
     echo "<div class='V'><p>予約が完了しました!</p>";
     echo "<p>予約日時：" . $reservationDate . "分です</p>";
-    echo "予約した商品はマイページから確認してください。"
+    echo "予約した商品はマイページから確認してください。";
     echo $product_id;
 
 }
