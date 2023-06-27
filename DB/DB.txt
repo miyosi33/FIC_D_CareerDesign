@@ -95,3 +95,4 @@ insert into product values(null, 'ホットチョコレート', 500);
 insert into product values(null, 'オレンジジュース', 250);
 insert into product values(null, 'オレンジジュース', 300);
 insert into product values(null, 'オレンジジュース', 350);
+

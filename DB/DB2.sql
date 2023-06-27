@@ -58,6 +58,7 @@ create table product_reservation (
     foreign key (customer_id) references customer(id)
 );
 
+
 insert into product values(null, 'クッキー', 120, 'food', 'Cookie.jpg', '小麦の香ばしさが感じられるよう、全粒粉の生地にバターを練り込み、ソフトな食感に焼き上げたクッキーです。砂糖の一部にブラウンシュガーを使い、コクのある甘さをプラスしています。', 1);
 insert into product values(null, 'クロワッサン', 200, 'food', 'Croissant.jpg', '発酵バターをたっぷり使用した生地を、何層にも丁寧に織り込んで焼き上げました。サクサクとした心地よい食感が楽しめます。', 0);
 insert into product values(null, 'いちごタルト', 400, 'food', 'StrawberryTart.jpg', '手作りタルト生地にカスタードとクリームを合わせたフランジパーヌ、きめ細やかなスポンジ、バニラビーンズソースを使った真っ白なミルクムースを重ね、真っ赤な完熟あまおうをすき間なく敷き詰めています。', 1);
