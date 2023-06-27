@@ -701,7 +701,7 @@ a:focus {
 }
 
 .book_section .form_container button {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     border: none;
     text-transform: uppercase;
     display: inline-block;
@@ -1057,9 +1057,11 @@ body {
 .customer_section table {
     margin: auto;
 }
+
 .customer_section td {
     padding: 10px 20px;
 }
+
 .tinko {
     text-align: center;
 }
@@ -1074,4 +1076,31 @@ body {
 
 .gan {
     margin: 0 20px;
+}
+
+.cart_container {
+    margin: 30px 0;
+}
+
+.cart_container th {
+    text-align: center;
+}
+
+.cart_container td {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #cacaca;
+}
+
+
+.cart_container table {
+    border-width: 2px 0;
+}
+
+.cart_bottom {
+    margin-top: 60px;
+}
+
+.btn_box {
+    margin-top: 15px;
 }

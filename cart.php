@@ -1,53 +1,77 @@
 <?php require 'header.php'; ?>
 
-<section class="book_section layout_padding">
-<div class="heading_container">
-    <h2>Cart</h2>
-    <?php
-        if (!empty($_SESSION['product'])) {
-          echo '<table>';
-          foreach ($_SESSION['product'] as $id=>$product) {
-            echo '<form action="cart.php" method="post">';
-            echo '<input type="hidden" name="command" value="cart_delete">';
-            echo '<input type="hidden" name="id" value="', $id, '">';
-            echo '<tr>';
-            echo '<td>', $product['name'], '</td>';
-            echo '<td>', $product['price'], '</td>';
-            echo '<td>', $product['count'], '</td>';
-            echo '<td><button type="submit">カートから削除</button></td>';
-            echo '</tr>';
-            echo '</form>';
-          }
-          echo '</table>';
-          if (isset($_SESSION['customer'])) {
-            echo '<div class="form_container col-md-6">';
-            echo '<form action="Syoyaku.php" method="post">';
-            echo '<div class="form-group">';
-            echo '<label for="reservation_date">予約日時:</label>';
-            echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required>';
-            echo '</div>';
-            echo '<button type="submit">予約する</button>';
-            echo '</form>';
-            echo '</div>';
-          } else {
-            echo '<div class="col-md-6">';
-            echo '<p>予約するにはログインする必要があります</p>';
-            echo '<div class="button2 form_container">';
-            echo '<a href="login.php"><button class="gan">';
-            echo 'ログインする';
-            echo '</button></a>';
-            echo '<a href="new.php"><button class="gan">';
-            echo '会員登録をする';
-            echo '</button></a>';
-            echo '</div>';
-            echo '</div>';
-
-          }
-        } else {
-          echo 'カートに商品がありません';
-        }
-    ?>   
-</div>
+<section class="book_section layout_padding customer_section">
+  <div class="container">
+    <div class="heading_container">
+        <h2>Cart</h2>
+        <?php
+            if (!empty($_SESSION['product'])) {
+              echo '<div class="cart_container form_container">';
+              echo '<table>';
+              echo '<tr>';
+              echo '<th>商品名</th>';
+              echo '<th>単価</th>';
+              echo '<th>数量</th>';
+              echo '<th></th>';
+              echo '</tr>';
+              $total = 0;
+              foreach ($_SESSION['product'] as $id=>$product) {
+                echo '<form action="cart.php" method="post">';
+                echo '<input type="hidden" name="command" value="cart_delete">';
+                echo '<input type="hidden" name="id" value="', $id, '">';
+                echo '<tr>';
+                echo '<td>', $product['name'], '</td>';
+                echo '<td>', $product['price'], '</td>';
+                echo '<td>', $product['count'], '</td>';
+                echo '<td><button type="submit">カートから削除</button></td>';
+                echo '</tr>';
+                echo '</form>';
+                $subtotal = $product['price'] * $product['count'];
+                $total += $subtotal;
+              }
+              echo '<tr>';
+              echo '<td>商品合計</td>';
+              echo '<td></td>';
+              echo '<td></td>';
+              echo '<td style="text-align: right;">', $total, '</td>';
+              echo '</tr>';
+              echo '</table>';  
+              echo '</div>';
+              echo '<div class="cart_bottom">';
+              if (isset($_SESSION['customer'])) {
+                echo '<div class="form_container col-md-6">';
+                echo '<form action="Syoyaku.php" method="post">';
+                echo '<div class="form-group">';
+                echo '<label for="reservation_date">予約日時:</label>';
+                echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required>';
+                echo '</div>';
+                echo '<div class="btn_box">';
+                echo '<button type="submit">予約を確定する</button>';
+                echo '</div>';
+                echo '</form>';
+                echo '</div>';
+              } else {
+                echo '<div class="col-md-6">';
+                echo '<p>予約するにはログインする必要があります</p>';
+                echo '<div class="button2 form_container">';
+                echo '<a href="login.php"><button class="gan">';
+                echo 'ログインする';
+                echo '</button></a>';
+                echo '<a href="new.php"><button class="gan">';
+                echo '会員登録をする';
+                echo '</button></a>';
+                echo '</div>';
+                echo '</div>';
+              echo '</div>';
+              }
+            } else {
+              echo '<div class="cart_bottom">';
+              echo '<p style="text-align: center">カートに商品がありません</p>';
+              echo '</div>';
+            }
+        ?>   
+    </div>
+  </div>
 </section>
 
 <script>
