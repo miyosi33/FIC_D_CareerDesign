@@ -42,3 +42,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </body>
 </html>
+
+dm.phpの部分の修正
+<form method="POST" action="">
+    <div class="mb-3">
+        <label for="title" class="form-label">タイトル</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">内容</label>
+        <textarea class="form-control" id="content" name="content" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="customer_id" class="form-label">顧客ID</label>
+        <input type="number" class="form-control" id="customer_id" name="customer_id" required>
+    </div>
+    <button type="submit" class="btn btn-primary">送信</button>
+</form>
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $title = $_POST['title'];
+    $content = $_POST['content'];
+    $customer_id = $_POST['customer_id'];
+    $sql = $pdo->prepare('INSERT INTO dm (title, content, customer_id) VALUES (?, ?, ?)');
+    $sql->execute([$title, $content, $customer_id]);
+}
