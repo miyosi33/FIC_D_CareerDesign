@@ -20,13 +20,13 @@
           }
           echo '</table>';
           if (isset($_SESSION['customer'])) {
-            echo '<div class="col-md-6 form_container">';
+            echo '<div class="form_container col-md-6">';
             echo '<form action="Syoyaku.php" method="post">';
             echo '<div class="form-group">';
             echo '<label for="reservation_date">予約日時:</label>';
             echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required>';
             echo '</div>';
-            echo '<buttton type="submit">予約する</button>';
+            echo '<button type="submit">予約する</button>';
             echo '</form>';
             echo '</div>';
           } else {
