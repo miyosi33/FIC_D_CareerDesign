@@ -23,7 +23,7 @@ create table customer (
 );
 
 
-/* DMは発送 */
+--  DMは発送
 create table dm (
     dm_id int auto_increment primary key,
     title varchar(100) not null,
@@ -35,4 +35,4 @@ insert into product values(null, 'クッキー', 120, 'food', 'Cookie.jpg', '小
 
 insert into customer values(null, 'sita', '福岡市博多区中呉服町3-13', 'sita');
 
-insert into dm (title, content) values ('重要なお知らせ', 'これは重要なお知らせです。');
+insert into dm (title, content) values ('下道店長からのお知らせ', '2023-06-27 14:00,サービス開始しました！');

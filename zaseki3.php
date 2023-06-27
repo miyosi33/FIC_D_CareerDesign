@@ -48,16 +48,16 @@
   <?php endif; ?>
 </section>
 
-<!-- 他の必要なHTMLやJavaScriptのコードを追加 -->
+<!-- 予約日時のJavaScriptのコードを追加 -->
 <script>
-  const reservationDateInput = document.getElementById("reservation_date");
-  const reservationTimeStart = 6; // 平日の予約開始時間（時）
-  const reservationTimeEnd = 18; // 平日の予約終了時間（時）
-  const weekendReservationTimeStart = 7; // 土日祝の予約開始時間（時）
-  const weekendReservationTimeEnd = 19; // 土日祝の予約終了時間（時）
-  const reservationInterval = 15; // 予約時間帯の間隔（分）
+  const Date = document.getElementById("reservation_date");
+  const TimeStart = 6; // 平日の予約開始時間（時）
+  const TimeEnd = 18; // 平日の予約終了時間（時）
+  const TimeStart2 = 7; // 土日祝の予約開始時間（時）
+  const TimeEnd2 = 19; // 土日祝の予約終了時間（時）
+  const Interval = 15; // 予約時間帯の間隔（分）
 
-  reservationDateInput.addEventListener("input", function() {
+    Date.addEventListener("input", function() {
     const selectedDate = new Date(this.value);
     const dayOfWeek = selectedDate.getDay();
     const hour = selectedDate.getHours();
@@ -65,20 +65,20 @@
 
     // 平日の予約時間帯制限
     if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-      if (hour < reservationTimeStart || hour > reservationTimeEnd) {
-        this.setCustomValidity("予約は平日" + reservationTimeStart + ":00~" + reservationTimeEnd + ":00の間で行ってください");
-      } else if (minutes % reservationInterval !== 0) {
-        this.setCustomValidity("予約時間帯は" + reservationInterval + "分刻みで選択してください");
+      if (hour < TimeStart || hour > TimeEnd) {
+        this.setCustomValidity("予約は平日" + TimeStart + ":00~" + TimeEnd + ":00の間で行ってください");
+      } else if (minutes % Interval !== 0) {
+        this.setCustomValidity("予約時間帯は" + Interval + "分刻みで選択してください");
       } else {
         this.setCustomValidity("");
       }
     }
     // 土日祝の予約時間帯制限
     else if (dayOfWeek === 0 || dayOfWeek === 6) {
-      if (hour < weekendReservationTimeStart || hour > weekendReservationTimeEnd) {
-        this.setCustomValidity("予約は土日祝" + weekendReservationTimeStart + ":00~" + weekendReservationTimeEnd + ":00の間で行ってください");
-      } else if (minutes % reservationInterval !== 0) {
-        this.setCustomValidity("予約時間帯は" + reservationInterval + "分刻みで選択してください");
+      if (hour < TimeStart2 || hour > TimeEnd2) {
+        this.setCustomValidity("予約は土日祝" + TimeStart2 + ":00~" + TimeEnd2 + ":00の間で行ってください");
+      } else if (minutes % Interval !== 0) {
+        this.setCustomValidity("予約時間帯は" + Interval + "分刻みで選択してください");
       } else {
         this.setCustomValidity("");
       }
