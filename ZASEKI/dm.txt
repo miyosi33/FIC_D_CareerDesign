@@ -1,5 +1,4 @@
 <?php require 'server_connection.php';?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,37 +8,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
+
 <?php
-
-// 削除ボタンがクリックされた場合の処理
-if (isset($_GET['delete'])) {
-    $deleteId = $_GET['delete'];
-    $sql = $pdo->prepare('delete from dm where dm_id = ?');
-    $sql->execute([$deleteId]);
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $sql = $pdo->prepare('insert into dm (title, content, TimeStamp_id) values (?, ?, current_timestamp)');
-    $sql->execute([$title, $content]);
+    $sql = $pdo->prepare('INSERT INTO dm (title, content, TimeStamp_id) VALUES (?, ?, ?)');
+    $sql->execute([$title, $content, time()]);
 }
-
 ?>
 <div class="m-5">
-    <?php 
-    foreach ($pdo->query('SELECT * FROM dm ORDER BY dm_id DESC') as $row) {
-        echo '<div>';
-        echo '<h5>' . $row["title"] . '</h5>';
-        echo '<p>' . $row["content"] . '</p>';
-        echo '<p>' . date('Y-m-d H:i', strtotime($row["TimeStamp_id"])) . '</p>';
-        echo '<a href="?delete=' . $row["dm_id"] . '">削除</a>';
-        echo '</div>';
-        echo '<hr>';
+<?php 
+    foreach( $pdo->query('select * from dm') as $row){
+        echo "タイトル名:".$row["title"]."<br>";
+        echo "内容:".$row["content"]."<br>";
+        echo "作成日時: ".date('Y-m-d H:i', strtotime($row["TimeStamp_id"]))."<br>"; // タイムスタンプを表示
+        echo "<hr>";
     }
     ?>
-
-<form method="POST" action="">
+    <br>
+    <form method="POST" action="">
         <div class="mb-3">
             <label for="title" class="form-label">タイトル</label>
             <input type="text" class="form-control" id="title" name="title" required>
@@ -51,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" class="btn btn-primary">追加</button>
     </form>
 </div>
-
 
 </body>
 </html>

@@ -27,7 +27,8 @@ create table customer (
 create table dm (
     dm_id int auto_increment primary key,
     title varchar(100) not null,
-    content varchar(500) not null
+    content varchar(500) not null,
+    TimeStamp_id TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 
