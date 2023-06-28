@@ -60,7 +60,7 @@
     const dayOfWeek = selectedDate.getDay();
     const hour = selectedDate.getHours();
     const minutes = selectedDate.getMinutes();
-
+      
     // 平日の予約時間帯制限
     if (dayOfWeek >= 1 && dayOfWeek <= 5) {
       if (hour < TimeStart || hour > TimeEnd) {

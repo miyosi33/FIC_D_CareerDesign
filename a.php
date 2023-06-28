@@ -15,7 +15,6 @@ if (isset($_SESSION['customer'])) {
         foreach ($sql_purchase as $row_purchase) {
             $sql_detail = $pdo->prepare('SELECT * FROM purchase_detail JOIN product ON purchase_detail.product_id = product.product_id WHERE purchase_id=?');
             $sql_detail->execute([$row_purchase['id']]);
-
             echo '<table>';
             echo '<tr><th>商品番号</th><th>商品名</th><th>価格</th><th>個数</th><th>小計</th></tr>';
             $total = 0;
