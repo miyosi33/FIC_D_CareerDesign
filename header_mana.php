@@ -34,6 +34,9 @@
         <li class="nav-item">
           <a class="nav-link" href="menuedit_mana.php">MenuEdit</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="client_mana.php">client</a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Reserve
