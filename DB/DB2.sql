@@ -26,6 +26,7 @@ create table customer (
 create table purchase (
     id int auto_increment not null primary key,     
     customer_id int not null, 						
+    reservation_date datetime not null,
     foreign key (customer_id) references customer(id)		
 );
 
