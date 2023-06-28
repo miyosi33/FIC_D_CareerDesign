@@ -97,6 +97,7 @@ if (isset($_REQUEST['command'])) {
         break;
       }
       break;
+
     // カート
     case 'cart':
       $id = $_REQUEST['id'];
@@ -113,8 +114,29 @@ if (isset($_REQUEST['command'])) {
         'count'=> $count + $_REQUEST['count']
       ];
       break;
+
+    // カートから削除
     case 'cart_delete':
       unset($_SESSION['product'][$_REQUEST['id']]);
+      break;
+    
+    // 購入確定
+    case 'purchase':
+      $purchase_id = 1;
+      foreach ($pdo->query('select max(id) from purchase') as $row) {
+        $purchase_id = $row['max(id)'] + 1;
+      }
+      $sql=$pdo->prepare('insert into purchase values(?, ?)');
+      if ($sql->execute([$purchase_id, $_SESSION['customer']['id']])) {
+        foreach ($_SESSION['product'] as $product_id=>$product) {
+          $sql=$pdo->prepare('insert into purchase_detail values(?, ?, ?)');
+          $sql->execute([$purchase_id, $product_id, $product['count']]);
+        }
+        unset($_SESSION['product']);
+      } else {
+        $alert = "<script type='text/javascript'>alert('購入手続き中にエラーが発生しました。申し訳ございません。');</script>";
+        echo $alert;
+      }
     }
 }
 ?>
