@@ -1,13 +1,10 @@
-index.htmlの文字
-
-dm_mana.phpのデザインをお願いします。
-
-・account.phpの予約履歴
-	・account.phpの座席予約をログインしているアカウントのものだけ表示するように ←完了しました
-	・account.phpの商品予約履歴の表示　←やります
-	・デザイン
+・dm_mana.phpのデザインをお願いします。
 
 ・管理者ログイン→menu_mana.phpに遷移
 
-・account.php商品予約履歴
-・account.php座席予約履歴
+・パスワードの入力をアスタリスクに
+
+以下優先度の低い改善点
+・index.htmlの文字
+・ボタンデザインの統一
+・パスワードのハッシュ化

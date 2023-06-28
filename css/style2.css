@@ -1108,3 +1108,7 @@ body {
 .history_div {
     margin: 70px 0;
 }
+.history_div p {
+    text-align: center;
+    margin: 100px 0;
+}

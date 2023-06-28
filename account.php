@@ -66,6 +66,9 @@
                             echo '</div>';
                             echo '</div>';
                         }
+                        if ($count == 0) {
+                            echo '<p>座席の予約履歴はありません</p>';
+                        }
                         ?>
                         </div>
                     </div>
@@ -75,6 +78,7 @@
                         </div>
                         <div class="accordion" id="accordionExample">
                         <?php
+                        $tmp=$count;
                         $sql_purchase=$pdo->prepare('select * from purchase where customer_id=?');
                         $sql_purchase->execute([$_SESSION['customer']['id']]);
                         foreach ($sql_purchase as $row_purchase) {
@@ -106,6 +110,9 @@
                             echo '</div>';
                             echo '</div>';
                             echo '</div>';
+                        }
+                        if ($count == $tmp) {
+                            echo '<p>商品の予約履歴はありません</p>';
                         }
                         ?>
                     </div>
