@@ -6,9 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $reservationDate = $_POST['reservation_date'];
     $seatType = $_POST['seat_type'];
-
-    $pdo = new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 'staff', 'password');
-
     $sql = $pdo->prepare("INSERT INTO seat_reservation (reservation_date, seat_type, customer_id) VALUES (?, ?, ?)");
 
     // ログインしている顧客のIDを取得する

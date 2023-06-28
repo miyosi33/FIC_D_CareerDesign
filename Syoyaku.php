@@ -8,8 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // データベースに座席予約情報を保存する処理を追加する
     // ここにデータベースへのデータ挿入処理を追加します
-    $pdo = new PDO('mysql:host=localhost;dbname=kadai;charset=utf8', 'staff', 'password');
-
     $sql = $pdo->prepare("INSERT INTO seat_reservation (reservation_date, product_id, customer_id) VALUES (?, ?, ?)");
 
     // 予約が成功した場合の処理
