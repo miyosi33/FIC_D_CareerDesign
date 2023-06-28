@@ -40,13 +40,17 @@
                 </form>
             </div>
             <?php
-                foreach ($pdo->query('select * from seat_reservation') as $row) {
-                                    echo "座席予約<br>";
-                                        echo "予約時刻：". $row['reservation_date'];
-                                        echo  "座席:".$row['seat_type'];
-                                    echo "\n";
-                                }
-                                ?>
+            if (isset($_SESSION['customer'])) {
+            $sql = $pdo->prepare('select * from seat_reservation where customer_id =? and reservation_id=reservation_id');
+            $sql->execute([$_SESSION['customer']['id']]);
+                foreach ($sql as $row) {
+                    echo "座席予約<br>";
+                    echo "予約時刻：". $row['reservation_date'];
+                    echo  "座席:".$row['seat_type'];  
+                    echo "\n";
+                    }
+                }
+            ?>
         </div>
     </div>
 </section>
