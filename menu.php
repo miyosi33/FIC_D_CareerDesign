@@ -34,7 +34,7 @@
               echo '<h5>', $row['product_name'], '</h5>';
               echo '<p>', $row['product_description'], '</p>';
               echo '<div class="quanity-div">';
-              echo '<form action="cart.php" class="quanity-form">';
+              echo '<form action="menu.php" class="quanity-form">';
               echo '<input type="hidden" name="command" value="cart">';
               echo '<input type="hidden" name="id" value="', $id, '">';
               echo '<input type="hidden" name="name" value="', $row['product_name'], '">';
