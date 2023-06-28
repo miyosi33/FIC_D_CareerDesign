@@ -2,4 +2,7 @@ index.htmlの文字
 
 dm_mana.phpのデザインをお願いします。
 
-account.phpの座席予約をログインしているアカウントのものだけ表示するように
+・account.phpの予約履歴
+	・account.phpの座席予約をログインしているアカウントのものだけ表示するように
+	・account.phpの商品予約履歴の表示
+	・デザイン
