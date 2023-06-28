@@ -156,7 +156,7 @@ if (isset($_REQUEST['command'])) {
   <link rel="shortcut icon" href="Shitamichi_images/logo.png" type="">
   <link href="css\login.css" rel="stylesheet" type="text/css" media="all">
 
-  <title> ~Shitamichi’s bakery~ </title>
+  <title> ~Shitamichi's bakery~ </title>
 
   <!-- bootstrap core css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -190,7 +190,7 @@ if (isset($_REQUEST['command'])) {
               <nav class="navbar navbar-expand-lg custom_nav-container fixed-top">
                 <a class="navbar-brand" href="index.php">
                   <span>
-                    Shitamichi’s bakery
+                    Shitamichi's bakery
                   </span>
                 </a>
       

@@ -21,7 +21,7 @@
                 <div class="col-md-7 col-lg-6 ">
                   <div class="detail-box">
                     <h1 class="slider-title">
-                      Shitamichi’s bakery
+                      Shitamichi's bakery
                     </h1>
                     <p>
                       思わず笑顔になるおいしいコーヒーを提供しています。クッキーやクロワッサン、タルトやケーキなどのお菓子と一緒にいかがでしょうか。

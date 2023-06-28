@@ -49,16 +49,6 @@ create table seat_reservation (
     foreign key (customer_id) references customer(id)
 );
 
--- 商品予約
-create table product_reservation (
-    reservation_id int auto_increment primary key,      
-    reservation_date datetime not null,                 
-    product_id int not null,                            
-    customer_id int not null,                         
-    foreign key (product_id) references product(product_id),
-    foreign key (customer_id) references customer(id)
-);
-
 -- お知らせ
 create table dm (
     dm_id int auto_increment primary key,
@@ -127,6 +117,6 @@ insert into product values(null, 'オレンジジュースS', 250, 'ice_drink', 
 insert into product values(null, 'オレンジジュースM', 300, 'ice_drink', 'OrangeJuice.jpg', '甘味と酸味のバランスがよく、豊かな風味のオレンジの特徴をそのままに、ソフトな飲み口に仕上げています。', 0);
 insert into product values(null, 'オレンジジュースL', 350, 'ice_drink', 'OrangeJuice.jpg', '甘味と酸味のバランスがよく、豊かな風味のオレンジの特徴をそのままに、ソフトな飲み口に仕上げています。', 0);
 
-insert into customer values(null, 'sita', '福岡市博多区中呉服町3-13', 'sita');
+insert into customer values(null, 'sita', '1234567890', 'sita');
 
 insert into dm (title, content) values ('下道店長からのお知らせ', '2023-06-27 14:00,サービス開始しました！');

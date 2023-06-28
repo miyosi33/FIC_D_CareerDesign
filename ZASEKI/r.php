@@ -45,6 +45,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 }
 
+
+echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required min=" echo date("Y-m-d\TH:i", strtotime("+1 days")); ">';
+
+
 ?>
+
+
+
 
 <?php require 'footer.php'; ?>
