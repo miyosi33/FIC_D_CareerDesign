@@ -6,3 +6,8 @@ dm_mana.phpのデザインをお願いします。
 	・account.phpの座席予約をログインしているアカウントのものだけ表示するように ←完了しました
 	・account.phpの商品予約履歴の表示　←やります
 	・デザイン
+
+・管理者ログイン→menu_mana.phpに遷移
+
+・account.php商品予約履歴
+・account.php座席予約履歴
