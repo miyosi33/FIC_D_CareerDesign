@@ -1,4 +1,4 @@
-<?php require "header1.php"; ?>
+<?php require "header.php"; ?>
 
 <section class="book_section layout_padding">
   <div class="heading_container">
