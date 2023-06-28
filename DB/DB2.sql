@@ -49,16 +49,6 @@ create table seat_reservation (
     foreign key (customer_id) references customer(id)
 );
 
--- 商品予約
-create table product_reservation (
-    reservation_id int auto_increment primary key,      
-    reservation_date datetime not null,                 
-    product_id int not null,                            
-    customer_id int not null,                         
-    foreign key (product_id) references product(product_id),
-    foreign key (customer_id) references customer(id)
-);
-
 -- お知らせ
 create table dm (
     dm_id int auto_increment primary key,

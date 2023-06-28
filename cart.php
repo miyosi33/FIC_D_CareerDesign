@@ -44,7 +44,7 @@
                 echo '<input type="hidden" name="command" value="purchase">';
                 echo '<div class="form-group">';
                 echo '<label for="reservation_date">予約日時:</label>';
-                echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required>';
+                echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required min=" date("Y-m-d\TH:i", strtotime("+1 days")); ">';
                 echo '</div>';
                 echo '<div class="btn_box">';
                 echo '<button type="submit">予約を確定する</button>';
