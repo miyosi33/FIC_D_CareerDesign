@@ -67,3 +67,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = $pdo->prepare('INSERT INTO dm (title, content, customer_id) VALUES (?, ?, ?)');
     $sql->execute([$title, $content, $customer_id]);
 }
+
+
+
+            <?php
+                // ユーザーがログインしていることを確認
+                if (isset($_SESSION['customer'])) {
+                    // ログインしているユーザーのIDを取得
+                    $customerID = $_SESSION['customer']['id'];
+                    // ユーザーが予約した座席情報を表示
+                    $sql = $pdo->prepare('select * frm seat_reservation where customer_id = :customer_id');
+                    $sql->bindParam(':customer_id', $customerID, PDO::PARAM_INT);
+                    $sql->execute();
+                    echo '<div>座席予約情報</div>';
+                    foreach ($sql as $row) {
+                        echo '予約時刻：', $row['reservation_date'], '<br>';
+                        echo '座席：', $row['seat_type'], '<br><br>';
+                    }
+                }
+                ?>
