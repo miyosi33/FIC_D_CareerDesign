@@ -39,18 +39,78 @@
                     </div>
                 </form>
             </div>
-            <?php
-            if (isset($_SESSION['customer'])) {
-            $sql = $pdo->prepare('select * from seat_reservation where customer_id =? and reservation_id=reservation_id');
-            $sql->execute([$_SESSION['customer']['id']]);
-                foreach ($sql as $row) {
-                    echo "座席予約<br>";
-                    echo "予約時刻：". $row['reservation_date'];
-                    echo  "座席:".$row['seat_type'];  
-                    echo "\n";
-                    }
-                }
-            ?>
+            <div class="history">
+                    <div class="seat_history history_div">
+                        <div class="heading_container heading_center">
+                            <h3>座席予約履歴</h3>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                        <?php
+                        $sql=$pdo->prepare('select * from seat_reservation where customer_id=?');
+                        $sql->execute([$_SESSION['customer']['id']]);
+                        $count=0;
+                        foreach ($sql as $row) {
+                            $count=$count+1;
+                            echo '<div class="accordion-item">';
+                            echo '<h2 class="accordion-header" id="heading', $count, '">';
+                            echo '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"';
+                            echo 'data-bs-target="#collapse', $count, '" aria-expanded="false" aria-controls="collapse', $count, '">';
+                            echo $row['reservation_date'];
+                            echo '</button>';
+                            echo '</h2>';
+                            echo '<div id="collapse', $count, '" class="accordion-collapse collapse" aria-labelledby="headingOne"';
+                            echo 'data-bs-parent="#accordionExample">';
+                            echo '<div class="accordion-body">';
+                            echo $row['seat_type'];
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                        ?>
+                        </div>
+                    </div>
+                    <div class="product_history history_div">
+                        <div class="heading_container heading_center">
+                            <h3>商品予約履歴</h3>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                        <?php
+                        $sql_purchase=$pdo->prepare('select * from purchase where customer_id=?');
+                        $sql_purchase->execute([$_SESSION['customer']['id']]);
+                        foreach ($sql_purchase as $row_purchase) {
+                            $count=$count+1;
+                            echo '<div class="accordion-item">';
+                            echo '<h2 class="accordion-header" id="heading', $count, '">';
+                            echo '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"';
+                            echo 'data-bs-target="#collapse', $count, '" aria-expanded="false" aria-controls="collapse', $count, '">';
+                            echo $row_purchase['reservation_date'];
+                            echo '</button>';
+                            echo '</h2>';
+                            echo '<div id="collapse', $count, '" class="accordion-collapse collapse" aria-labelledby="heading', $count, '"';
+                            echo 'data-bs-parent="#accordionExample">';
+                            echo '<div class="accordion-body">';
+                            echo '<table>';
+                            $sql_detail=$pdo->prepare('select * from purchase_detail where purchase_id=?');
+                            $sql_detail->execute([$row_purchase['id']]);
+                            foreach ($sql_detail as $row_detail) {
+                                $sql_last=$pdo->prepare('select * from product where product_id=?');
+                                $sql_last->execute([$row_detail['product_id']]);
+                                foreach ($sql_last as $row) {
+                                    echo '<tr>';
+                                    echo '<td>', $row['product_name'], '</td>';
+                                    echo '<td>', $row_detail['count'], '</td>';
+                                    echo '</tr>';
+                                }    
+                            }
+                            echo '</table>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
