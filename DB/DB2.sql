@@ -127,6 +127,6 @@ insert into product values(null, 'オレンジジュースS', 250, 'ice_drink', 
 insert into product values(null, 'オレンジジュースM', 300, 'ice_drink', 'OrangeJuice.jpg', '甘味と酸味のバランスがよく、豊かな風味のオレンジの特徴をそのままに、ソフトな飲み口に仕上げています。', 0);
 insert into product values(null, 'オレンジジュースL', 350, 'ice_drink', 'OrangeJuice.jpg', '甘味と酸味のバランスがよく、豊かな風味のオレンジの特徴をそのままに、ソフトな飲み口に仕上げています。', 0);
 
-insert into customer values(null, 'sita', '福岡市博多区中呉服町3-13', 'sita');
+insert into customer values(null, 'sita', '1234567890', 'sita');
 
 insert into dm (title, content) values ('下道店長からのお知らせ', '2023-06-27 14:00,サービス開始しました！');
