@@ -35,7 +35,7 @@
           <a class="nav-link" href="menuedit_mana.php">MenuEdit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="client_mana.php">Client</a>
+          <a class="nav-link" href="customer_mana.php">Customer</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,7 +44,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="reservezaseki_mana.php">seat</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">goods</a></li>
+            <li><a class="dropdown-item" href="goods_mana.php">goods</a></li>
           </ul>
         </li>
         </div>
