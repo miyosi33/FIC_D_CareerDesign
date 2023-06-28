@@ -24,7 +24,7 @@ create table customer (
 
 /* 購入 */
 create table purchase (
-    id int auto_increment not null primary key,     
+    id int not null primary key,     
     customer_id int not null, 						
     reservation_date datetime not null,
     foreign key (customer_id) references customer(id)		
