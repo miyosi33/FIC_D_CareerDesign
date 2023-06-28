@@ -63,9 +63,9 @@ create table dm (
     dm_id int auto_increment primary key,
     title varchar(100) not null,
     content varchar(500) not null,
-    TimeStamp_id TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    TimeStamp_id TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     customer_id int,
-    foreign key (customer_id) references customer (customer_id)
+    foreign key (customer_id) references customer (id)
 );
 
 insert into product values(null, 'クッキー', 120, 'food', 'Cookie.jpg', '小麦の香ばしさが感じられるよう、全粒粉の生地にバターを練り込み、ソフトな食感に焼き上げたクッキーです。砂糖の一部にブラウンシュガーを使い、コクのある甘さをプラスしています。', 1);
