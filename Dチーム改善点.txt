@@ -1,36 +1,5 @@
 index.htmlの文字
 
-画像たちのフォルダ名、ファイル名をすべてアルファベットと記号だけ（日本語を使わない名前）に変更
-↓
-それにともなってデータベースの画像パスの部分もすべてそろえる
-
-DBのproductテーブルimage_path列には画像のファイル名のみに（例：Cookie.jpg）
-
-画像フォルダの構成を以下のように
-FIC_D_CAREERDESIGN
-	|
-	|----product_images
-		|
-		|----food
-		|	|
-		|	|----Cookie.jpg
-		|
-		|
-		|----ice_drink
-		|	|
-		|	|----IceLemonTea.jpg
-		|
-		|
-		|----hot_drink
-		|	|
-		|	|----LemonTea.jpg
-
-
-
-
-カートページ
-
-
-お知らせについて
-header.phpの194行目のリンクについてcssの適応でaタグの処理をどうするか？
 dm_mana.phpのデザインをお願いします。
+
+account.phpの座席予約をログインしているアカウントのものだけ表示するように

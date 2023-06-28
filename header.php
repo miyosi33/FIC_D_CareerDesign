@@ -209,11 +209,13 @@ if (isset($_REQUEST['command'])) {
                     <li class="nav-item">
                       <a class="nav-link" href="seat.php">座席予約</a>
                     </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="dm.php">お知らせ</a>
+                    </li>
                   </ul>
                   <div class="user_option">
                     <?php
                     if (isset($_SESSION['customer'])) {
-                      echo '<a class="nav-link" href="dm.php">お知らせ</a>';
                       echo '<a href="account.php" class="user_link">';
                       echo '<i class="fa fa-user" aria-hidden="true"></i>';
                       echo '</a>';
