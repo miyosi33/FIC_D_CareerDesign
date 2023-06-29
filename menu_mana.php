@@ -36,7 +36,7 @@ if (isset($_SESSION['admin'])) {
     echo '<table class="table">';
     echo '<thead>';
     echo '<tr>';
-    echo '<th scope="col">ID</th><th scope="col">名前</th><th scope="col">値段</th><th scope="col">種類</th><th scope="col">説明</th><th scope="col">お勧め</th>';
+    echo '<th scope="col">ID</th><th scope="col">名前</th><th scope="col" style="width: 5%">値段</th><th scope="col">種類</th><th scope="col"style="width: 60%">説明</th><th scope="col">お勧め</th>';
     echo '</tr>';
     echo '</thead>';
     foreach ($pdo->query('select * from product') as $row) {
