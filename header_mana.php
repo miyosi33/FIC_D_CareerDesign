@@ -54,7 +54,9 @@
         <div class="text-right">
           <form action="login_mana.php" method="post">
               <input type="hidden" name="command" value="logout">
-              <button type="submit">Logout</button>
+              <div class="d-flex">
+                <button class="btn btn-outline-success" type="submit">Logout</button>
+              </div>
           </form>          
         </div>
 
