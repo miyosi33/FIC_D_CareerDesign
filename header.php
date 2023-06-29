@@ -1,5 +1,7 @@
 <?php session_start(); ?>
-<?php require 'server_connection.php'; 
+<?php error_reporting(0); ?>
+<?php 
+require 'server_connection.php'; 
 // ログイン、ログアウト、新規会員登録の遷移されてきたか
 if (isset($_REQUEST['command'])) {
   switch ($_REQUEST['command']) {

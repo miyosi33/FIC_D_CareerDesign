@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_REQUEST['command'])) {
+    if ($_REQUEST['command'] == 'logout') {
+        unset($_SESSION['admin']);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
