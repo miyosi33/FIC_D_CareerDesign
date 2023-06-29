@@ -14,6 +14,15 @@ if (isset($_REQUEST['command'])) {
 
 	// 追加ボタンを押したときの処理
 	case 'insert':
+		// 何も入力されていなかったらなにもしない
+		if (empty($_REQUEST['product_name'])
+		 || empty($_REQUEST['product_price'])
+		 || empty($_REQUEST['product_genre'])
+		 || empty($_REQUEST['product_description'])
+		 || empty($_REQUEST['is_featured'])
+		 ){
+			break;
+		}
 		// 内容を追加
 		$sql=$pdo->prepare('insert into product values(null,?,?,?,null,?,?)');
 		$sql->execute(
@@ -28,7 +37,12 @@ if (isset($_REQUEST['command'])) {
 	// 更新ボタンを押したときの処理
 	case 'update':
 		// 何も入力されていなかったらなにもしない
-		if (empty($_REQUEST['product_name'])){
+		if (empty($_REQUEST['product_name'])
+		 || empty($_REQUEST['product_price'])
+		 || empty($_REQUEST['product_genre'])
+		 || empty($_REQUEST['product_description'])
+		 || empty($_REQUEST['is_featured'])
+		 ){
 			break;
 		}
 		// 内容を更新
