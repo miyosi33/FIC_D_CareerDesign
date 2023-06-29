@@ -9,9 +9,9 @@ create table product (
     product_name varchar(100) not null,         
     product_price int not null,                 
     product_genre varchar(50) not null,         
-    image_path varchar(200) not null,           
+    image_path varchar(200),           
     product_description varchar(500) not null,  
-    is_featured bit not null                    
+    is_featured varchar(10) not null
 );
 
 /* 顧客情報 */ 
