@@ -51,6 +51,11 @@
             <li><a class="dropdown-item" href="goods_mana.php">goods</a></li>
           </ul>
         </li>
+        <div class="text-right">
+          <form action="login_mana.php" method="post">
+              <input type="hidden" name="command" value="logout">
+              <button type="submit">Logout</button>
+          </form>          
         </div>
 
           </ul>
