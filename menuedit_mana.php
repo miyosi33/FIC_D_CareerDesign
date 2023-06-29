@@ -41,7 +41,6 @@ if (isset($_REQUEST['command'])) {
             $_REQUEST['is_featured'],
 			$_REQUEST['product_id']]
 		);
-		echo $_REQUEST['is_featured'];
 		break;
 	// 削除ボタンを押したときの処理
 	case 'delete':

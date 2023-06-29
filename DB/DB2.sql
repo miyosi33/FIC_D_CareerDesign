@@ -11,7 +11,7 @@ create table product (
     product_genre varchar(50) not null,         
     image_path varchar(200),           
     product_description varchar(500) not null,  
-    is_featured bit not null
+    is_featured varchar(10) not null
 );
 
 /* 顧客情報 */ 
