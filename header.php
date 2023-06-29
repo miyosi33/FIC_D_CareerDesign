@@ -7,7 +7,7 @@ if (isset($_REQUEST['command'])) {
     case 'login':
       unset($_SESSION['customer']);
       $sql=$pdo->prepare('select * from customer where name=? and password=?');
-      $sql->execute([$_REQUEST['name'], $_REQUEST['password']]);
+      $sql->execute([$_REQUEST['name'], hash('sha256', $_REQUEST['password'])]);
       foreach($sql as $row){
         $_SESSION['customer']=[
             'id'        => $row['id'],
@@ -43,7 +43,7 @@ if (isset($_REQUEST['command'])) {
         $sql->execute([
           htmlspecialchars($_REQUEST['name']),
           htmlspecialchars($_REQUEST['phone_number']),
-          htmlspecialchars($_REQUEST['password'])
+          hash('sha256', $_REQUEST['password'])
         ]);
         break;
       } else {
@@ -72,7 +72,7 @@ if (isset($_REQUEST['command'])) {
       $sql=$pdo->prepare('select * from customer where id=?');
       $sql->execute([$id]);
       foreach ($sql as $row) {
-        if ($row['password'] != $_REQUEST['password']) {
+        if ($row['password'] != hash('sha256', $_REQUEST['password'])) {
           $alert = "<script type='text/javascript'>alert('パスワードが間違っています');</script>";
           echo $alert;
           $flag = 0;
@@ -87,11 +87,11 @@ if (isset($_REQUEST['command'])) {
         $name = $_SESSION['customer']['name'];
         $address = $_SESSION['customer']['address'];
         $sql=$pdo->prepare('update customer set password=? where id=?');
-        $sql->execute([htmlspecialchars($_REQUEST['new_password']), $id]);
+        $sql->execute([hash('sha256', $_REQUEST['new_password']), $id]);
         $_SESSION['customer']=[
           'id'      =>$id,
           'name'    =>$name,
-          'password'=>htmlspecialchars($_REQUEST['new_password']),
+          'password'=>hash('sha256', $_REQUEST['new_password']),
           'address' =>$address
         ];
         break;

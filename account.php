@@ -13,7 +13,6 @@
                 <form action="account.php" method="post">
                     <input type="hidden" name="command" value="address">
                     <?php
-                    $passAst = strlen($_SESSION['customer']['password']);
                     echo '<input type="hidden" name="name" value="', $_SESSION['customer']['name'], '">';
                     echo '<input type="hidden" name="password" value="', $_SESSION['customer']['password'], '">';
                     echo '<table>';
@@ -22,9 +21,7 @@
                     echo '<td><button type="submit">変更</button></td></tr>';
                     echo '<tr><td><label>Password</label></td>';
                     echo '<td>';
-                    for ($i=0; $i<$passAst; $i++) {
-                        echo '*';
-                    }
+                    echo '********';
                     echo '</td>';
                     echo '<td><a href="change_pass.php"><button type="button" onclick="location.href=\'change_pass.php\'">変更</button></a></td></tr>';
                     echo '</table>';

@@ -11,12 +11,18 @@ if (isset($_REQUEST['command'])) {
     switch ($_REQUEST['command']) {
         // ログイン
         case 'login':
+            unset($_SESSION['admin']);
 
             // ユーザー名とパスワードの検証
-            $sql = $pdo->prepare("select * from admin where username = ? and password = ?");
-            $sql->execute([$_REQUEST['username'], $_REQUEST['password']]);
-            $admin = $sql->fetch(PDO::FETCH_ASSOC); // ?
-            $_SESSION['admin'] = $_REQUEST['username'];
+            $sql = $pdo->prepare("select * from admin where username=? and password=?");
+            $sql->execute([$_REQUEST['username'], hash('sha256', $_REQUEST['password'])]);
+            foreach($sql as $row){
+                $_SESSION['admin']=[
+                    'admin_id'        => $row['admin_id'],
+                    'username'      => $row['username'],
+                    'password'  => $row['password']
+                ];
+            }
             if (!isset($_SESSION['admin'])) {
                 $alert = "<script type='text/javascript'>alert('ログイン名もしくはパスワードが間違っています');</script>";
                 echo $alert;

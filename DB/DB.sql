@@ -66,7 +66,7 @@ create table admin (
     password varchar(100) not null
 );
 
-insert into admin (username, password) values ('Shitamichi', 'Shitamichi_admin');
+insert into admin (username, password) values ('Shitamichi', '9ae42a0c7fae97275ba1935bdf7f9136fc93a71ea97f96d4a955a3430d6bbfbd');
 
 insert into product values(null, 'クッキー', 120, 'food', 'Cookie.jpg', '小麦の香ばしさが感じられるよう、全粒粉の生地にバターを練り込み、ソフトな食感に焼き上げたクッキーです。砂糖の一部にブラウンシュガーを使い、コクのある甘さをプラスしています。', 1);
 insert into product values(null, 'クロワッサン', 200, 'food', 'Croissant.jpg', '発酵バターをたっぷり使用した生地を、何層にも丁寧に織り込んで焼き上げました。サクサクとした心地よい食感が楽しめます。', 0);
@@ -126,6 +126,6 @@ insert into product values(null, 'オレンジジュースS', 250, 'ice_drink', 
 insert into product values(null, 'オレンジジュースM', 300, 'ice_drink', 'OrangeJuice.jpg', '甘味と酸味のバランスがよく、豊かな風味のオレンジの特徴をそのままに、ソフトな飲み口に仕上げています。', 0);
 insert into product values(null, 'オレンジジュースL', 350, 'ice_drink', 'OrangeJuice.jpg', '甘味と酸味のバランスがよく、豊かな風味のオレンジの特徴をそのままに、ソフトな飲み口に仕上げています。', 0);
 
-insert into customer values(null, 'sita', '1234567890', 'sita');
+insert into customer values(null, 'sita', '1234567890', '161e3ca9f09ebf25c67a1765d75ee1b6acab5aa9964247a2aba985a656bf5287');
 
 insert into dm (title, content) values ('下道店長からのお知らせ', '2023-06-27 14:00,サービス開始しました！');
