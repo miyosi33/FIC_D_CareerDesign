@@ -1,7 +1,9 @@
+<?php session_start(); ?>
 <?php require 'header_mana.php'; ?>
 
 <div class="m-5">
     <?php
+    if (isset($_SESSION['admin'])) {
         echo '<table class="table">';
         echo '<thead>';
         echo '<tr>';
@@ -29,6 +31,9 @@
         }
         echo '</tbody>';
         echo '</table>';
+    } else {
+        echo '<a href="login_mana.php">ログインに戻る</a>';
+    }
         ?>
     </table>
 </div>
