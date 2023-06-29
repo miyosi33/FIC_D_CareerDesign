@@ -108,10 +108,14 @@ if (isset($_REQUEST['command'])) {
       if (isset($_SESSION['product'][$id])) {
         $count=$_SESSION['product'][$id]['count'];
       }
+      $count=$count+$_REQUEST['count'];
+      if ($count > 99) {
+        $count=99;
+      }
       $_SESSION['product'][$id]=[
         'name' => $_REQUEST['name'],
         'price'=> $_REQUEST['price'],
-        'count'=> $count + $_REQUEST['count']
+        'count'=> $count
       ];
       $alert = "<script type='text/javascript'>alert('カートに追加しました');</script>";
       echo $alert;
