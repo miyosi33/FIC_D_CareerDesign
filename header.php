@@ -60,7 +60,7 @@ if (isset($_REQUEST['command'])) {
       $_SESSION['customer']=[
         'id'      =>$id,
         'name'    =>htmlspecialchars($_REQUEST['name']),
-        'password'=>htmlspecialchars($_REQUEST['password']),
+        'password'=>hash('sha256', $_REQUEST['password']),
         'address' =>htmlspecialchars($_REQUEST['address']),
       ];
       break;
