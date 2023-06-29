@@ -35,7 +35,7 @@
               echo '<td>商品合計</td>';
               echo '<td></td>';
               echo '<td></td>';
-              echo '<td style="text-align: right;">', $total, '</td>';
+              echo '<td style="text-align: right;">', $total, ' 円</td>';
               echo '</tr>';
               echo '</table>';  
               echo '</div>';

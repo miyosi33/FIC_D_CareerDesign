@@ -35,7 +35,7 @@
                 <form action="login.php" method="post">
                     <input type="hidden" name="command" value="logout">
                     <div class="btn_box tinko">
-                        <button><input type="submit" value="LOGOUT"></button>
+                        <button><input type="submit" value="ログアウト"></button>
                     </div>
                 </form>
             </div>
