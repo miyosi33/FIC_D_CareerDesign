@@ -23,7 +23,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Shitamichi’s bakery</a>
+    <a class="navbar-brand">Shitamichi’s bakery</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,6 +51,13 @@
             <li><a class="dropdown-item" href="goods_mana.php">goods</a></li>
           </ul>
         </li>
+        <div class="text-right">
+          <form action="login_mana.php" method="post">
+              <input type="hidden" name="command" value="logout">
+              <div class="d-flex">
+                <button class="btn btn-outline-success" type="submit">Logout</button>
+              </div>
+          </form>          
         </div>
 
           </ul>

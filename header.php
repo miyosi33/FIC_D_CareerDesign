@@ -36,14 +36,14 @@ if (isset($_REQUEST['command'])) {
       }
       // ログイン名の重複確認
       $sql=$pdo->prepare('select * from customer where name=?');
-      $sql->execute([$_REQUEST['name']]);
+      $sql->execute([htmlspecialchars($_REQUEST['name'])]);
       if (empty($sql->fetchAll())) {
         // 会員情報を新規登録する
         $sql=$pdo->prepare('insert into customer values(null,?,?,?)');
         $sql->execute([
-          $_REQUEST['name'],
-          $_REQUEST['phone_number'],
-          $_REQUEST['password']
+          htmlspecialchars($_REQUEST['name']),
+          htmlspecialchars($_REQUEST['phone_number']),
+          htmlspecialchars($_REQUEST['password'])
         ]);
         break;
       } else {
@@ -59,9 +59,9 @@ if (isset($_REQUEST['command'])) {
       $sql->execute([$_REQUEST['address'], $id]);
       $_SESSION['customer']=[
         'id'      =>$id,
-        'name'    =>$_REQUEST['name'],
-        'password'=>$_REQUEST['password'],
-        'address' =>$_REQUEST['address'],
+        'name'    =>htmlspecialchars($_REQUEST['name']),
+        'password'=>htmlspecialchars($_REQUEST['password']),
+        'address' =>htmlspecialchars($_REQUEST['address']),
       ];
       break;
 
@@ -87,11 +87,11 @@ if (isset($_REQUEST['command'])) {
         $name = $_SESSION['customer']['name'];
         $address = $_SESSION['customer']['address'];
         $sql=$pdo->prepare('update customer set password=? where id=?');
-        $sql->execute([$_REQUEST['new_password'], $id]);
+        $sql->execute([htmlspecialchars($_REQUEST['new_password']), $id]);
         $_SESSION['customer']=[
           'id'      =>$id,
           'name'    =>$name,
-          'password'=>$_REQUEST['new_password'],
+          'password'=>htmlspecialchars($_REQUEST['new_password']),
           'address' =>$address
         ];
         break;
@@ -133,7 +133,7 @@ if (isset($_REQUEST['command'])) {
         $purchase_id = $row['max(id)'] + 1;
       }
       $sql=$pdo->prepare('insert into purchase values(?, ?, ?)');
-      if ($sql->execute([$purchase_id, $_SESSION['customer']['id'], $_REQUEST['reservation_date']])) {
+      if ($sql->execute([$purchase_id, $_SESSION['customer']['id'], htmlspecialchars($_REQUEST['reservation_date'])])) {
         foreach ($_SESSION['product'] as $product_id=>$product) {
           $sql=$pdo->prepare('insert into purchase_detail values(?, ?, ?)');
           $sql->execute([$purchase_id, $product_id, $product['count']]);
