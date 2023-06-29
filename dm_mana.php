@@ -1,5 +1,5 @@
 <?php require 'server_connection.php';?>
-
+<?php require 'header_mana.php'; ?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
