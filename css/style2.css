@@ -1011,6 +1011,10 @@ body {
     font-family: uzuraFont;
 }
 
+.font-unset {
+    font-family:cursive;
+}
+
 .carousel-item .detail-box {
     text-shadow: 1px 2px 3px #808080;
     -webkit-text-stroke: .5px rgba(125, 49, 19, .4);
@@ -1112,8 +1116,4 @@ body {
 .history_div p {
     text-align: center;
     margin: 100px 0;
-}
-
-.pass {
-    font-family: unset;
 }

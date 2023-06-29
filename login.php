@@ -11,18 +11,18 @@
       ログイン
     </h6>
     </div>
-
-    
     <div class="col-md-12">
 
         <div class="form_container">
           <form action="index.php" method="post">
             <input type="hidden" name="command" value="login">
-            <div>
-              <input type="text" class="form-control" placeholder="Your Name" name="name" required/>
-            </div>
-            <div>
-              <input type="text" class="form-control" placeholder="Password" name="password" required/>
+            <div class="font-unset">
+              <div>
+                <input type="text" class="form-control" placeholder="Your Name" name="name" required/>
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" name="password" required/>
+              </div>
             </div>
             <a class="btn_box">
               <button><input type="submit" value="ログイン"></button>
