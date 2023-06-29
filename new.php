@@ -6,6 +6,7 @@
     <h2>
         New
     </h2>
+    <h6>会員登録</h6>
   </div>
     
   <div class="col-md-12">
@@ -29,7 +30,7 @@
         <div class="form_container">
           <div class="btn_box">
             <button>
-              <input type="submit" value="REGIST">
+              <input type="submit" value="会員登録">
             </button>
           </div>
         </div>

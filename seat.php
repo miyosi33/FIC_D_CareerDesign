@@ -4,14 +4,32 @@
   <div class="heading_container heading_center">
     <h2>Seat reservation</h2>
     <h6>座席予約</h6>
+  </div>
     <?php
     // ログイン状態の確認や他の必要な処理を追加する
     if (isset($_SESSION["customer"])) {
-      // ログインしているので予約できる。 27行以降の処理をする
+      echo '<div class="col-md-6 form_container">';
+      echo '<div class="Y">';
+      echo '<p>　平日6:00am～6:00pm<br>土日祝7:00am～7:00pm<br>予約は24時間前から可能で<br>15分刻みで予約する必要があります<br>';
+      echo '</p></div>';
+      echo '<form action="reservation.php" method="post">';
+      echo '<div class="form-group">';
+      echo '<label for="reservation_date">予約日時:</label>';
+      echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required min="<?php echo date(\'Y-m-d\TH:i\', strtotime(\'+1 days\')); ?>">';
+      echo '</div>';
+      echo '<div class="form-group">';
+      echo '<label for="seat_type">座席の種類:</label>';
+      echo '<select id="seat_type" name="seat_type" required>';
+      echo '<option value="1人席">1人席</option>';
+      echo '<option value="2人席">2人席</option>';
+      echo '<option value="4人席">4人席</option>';
+      echo '</select>';
+      echo '</div>';
+      echo '<button type="submit">予約する</button>';
+      echo '</form>';
+      echo '</div>';
     } else {
-      echo "<div class='Y'><p>ログインしていません。<br>
-      現在はログインしている方のみ予約できるようになっています。<br>会員登録無しでの予約につきましてはもうしばらくお待ちください。<br>
-      下のボタンから会員登録、またはログインしてください！</p></div>";
+      echo "<div class='Y'><p>予約するにはログインする必要があります</p></div>";
       echo '<div class="button2 form_container">';
       echo '<a href="login.php"><button class="gan">';
       echo 'ログインする';
@@ -22,29 +40,6 @@
       echo '</div>';
     }
     ?>
-  </div>
-  <?php if (isset($_SESSION["customer"])) : ?>
-    <div class="col-md-6 form_container">
-      <div class="Y">
-        <p>予約できる日時は平日6:00am～6:00pm,<br>土日祝7:00am～7:00pmで15分刻みとなります。<br>
-            予約は1日前からとなっており、<br>当日予約は受け付けておりません。</p></div>
-      <form action="reservation.php" method="post">
-        <div class="form-group">
-          <label for="reservation_date">予約日時:</label>
-          <input type="datetime-local" id="reservation_date" name="reservation_date" required min="<?php echo date('Y-m-d\TH:i', strtotime('+1 days')); ?>">
-        </div>
-        <div class="form-group">
-          <label for="seat_type">座席の種類:</label>
-          <select id="seat_type" name="seat_type" required>
-            <option value="1人席">1人席</option>
-            <option value="2人席">2人席</option>
-            <option value="4人席">4人席</option>
-          </select>
-        </div>
-        <button type="submit">予約する</button>
-      </form>
-    </div>
-  <?php endif; ?>
 </section>
 
 <!-- 予約日時のJavaScriptのコードを追加 -->

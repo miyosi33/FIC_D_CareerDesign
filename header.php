@@ -285,11 +285,11 @@ if (isset($_REQUEST['command'])) {
                     // ログインしているか
                     if (isset($_SESSION['customer'])) {
                       echo '<a href="account.php" class="order_online">';
-                      echo 'Account';
+                      echo 'ACCOUNT';
                       echo '</a>';
                     } else {
                       echo '<a href="login.php" class="order_online">';
-                      echo 'Login';
+                      echo 'LOGIN';
                       echo '</a>';
                     }
                     ?>

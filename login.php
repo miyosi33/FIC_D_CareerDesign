@@ -7,6 +7,9 @@
     <h2>
       Login
     </h2>
+    <h6>
+      ログイン
+    </h6>
     </div>
 
     
@@ -22,7 +25,7 @@
               <input type="text" class="form-control" placeholder="Password" name="password" required/>
             </div>
             <a class="btn_box">
-              <button><input type="submit" value="LOGIN"></button>
+              <button><input type="submit" value="ログイン"></button>
             </a>
           </form>
         </div>
@@ -30,17 +33,16 @@
           <h2>
             Register now
           </h2>
+          <h6>
+            新規会員登録
+          </h6>
         </div>
-        <p align="left">※新規会員登録はこちらから</p>
-      
-          
           <div class="col-md-12">
-          
             <div class="form_container">
               <div class="btn_box">
                 <a href="new.php">
                   <button>
-                    Regist
+                    会員登録
                   </button>
                 </a>
               </div>
