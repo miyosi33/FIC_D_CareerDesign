@@ -41,7 +41,7 @@
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            Opening Hours
+            営業時間
           </h4>
           <p>
             平日: 6:00am - 6:00pm

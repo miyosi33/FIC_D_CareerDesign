@@ -24,7 +24,7 @@
                       Shitamichi's bakery
                     </h1>
                     <p>
-                      思わず笑顔になるおいしいコーヒーを提供しています。クッキーやクロワッサン、タルトやケーキなどのお菓子と一緒にいかがでしょうか。
+                      思わず笑顔になるおいしいコーヒーを提供しています。<br>クッキーやクロワッサン、タルトやケーキなどのお菓子と一緒にいかがでしょうか。
                     </p>
                   </div>
                 </div>
@@ -40,7 +40,7 @@
                       おすすめはタルト！
                     </h1>
                     <p>
-                      当店のおすすめの商品はタルトです！店長のこだわりのタルトは思わず笑顔になるおいしい仕上がりとなっています！
+                      当店のおすすめの商品はタルトです！<br>店長のこだわりのタルトは思わず笑顔になるおいしい仕上がりとなっています！
                     </p>
                   </div>
                 </div>
@@ -56,7 +56,7 @@
                       ～予約について～
                     </h1>
                     <p>
-                      予約は座席と商品のみの予約と別々になっています。座席は１人席、２人席、４人席　から選択できます。予約時間は平日と土日祝で多少時間が違います。ご了承ください。
+                      予約は座席のみ、商品のみとそれぞれ可能です。<br>座席は１人席、２人席、４人席　から選択できます。<br>予約時間は平日と土日祝で多少時間が異なります。ご了承ください。
                     </p>
                   </div>
                 </div>
@@ -82,8 +82,11 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          おすすめ メニュー
+          Recommended menu  
         </h2>
+        <h6>
+          おすすめ メニュー
+        </h6>
       </div>
 
       <div class="filters-content">
@@ -93,7 +96,7 @@
 
           <?php
             foreach($pdo->query('select * from product') as $row){
-              if($row['is_featured']){
+              if($row['is_featured'] == '1'){
                 $id = $row['product_id'];
                 echo '<div class="col-sm-6 col-lg-4 all ', $row['product_genre'], '">';
                 echo '<div class="box">';
@@ -126,7 +129,7 @@
     </div>
     <div class="btn-box">
       <a href="menu.php">
-        View More
+        もっと見る
       </a>
     </div>
   </section>
