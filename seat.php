@@ -15,7 +15,9 @@
       echo '<form action="reservation.php" method="post">';
       echo '<div class="form-group">';
       echo '<label for="reservation_date">予約日時:</label>';
-      echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required min="<?php echo date(\'Y-m-d\TH:i\', strtotime(\'+1 days\')); ?>">';
+      $Day = date('Y-m-d', strtotime('+1 day'));
+      $Time = date('H:i', strtotime('+1 day'));
+      echo '<input type="datetime-local" id="reservation_date" name="reservation_date" required min="' . $Day . 'T' . $Time . '">';
       echo '</div>';
       echo '<div class="form-group">';
       echo '<label for="seat_type">座席の種類:</label>';
