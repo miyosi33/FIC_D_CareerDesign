@@ -8,6 +8,9 @@
         <h2>
           Menu
         </h2>
+        <h6>
+          メニュー
+        </h6>
       </div>
 
       <ul class="filters_menu">

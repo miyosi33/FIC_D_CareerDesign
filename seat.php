@@ -1,8 +1,9 @@
 <?php require "header.php"; ?>
 
 <section class="book_section layout_padding">
-  <div class="heading_container">
-    <h2>座席予約</h2>
+  <div class="heading_container heading_center">
+    <h2>Seat reservation</h2>
+    <h6>座席予約</h6>
     <?php
     // ログイン状態の確認や他の必要な処理を追加する
     if (isset($_SESSION["customer"])) {
@@ -84,4 +85,4 @@
   });
 </script>
 
-<?php require "footer1.php"; ?>
+<?php require "footer.php"; ?>

@@ -113,6 +113,8 @@ if (isset($_REQUEST['command'])) {
         'price'=> $_REQUEST['price'],
         'count'=> $count + $_REQUEST['count']
       ];
+      $alert = "<script type='text/javascript'>alert('カートに追加しました');</script>";
+      echo $alert;
       break;
 
     // カートから削除
@@ -207,10 +209,10 @@ if (isset($_REQUEST['command'])) {
                       <a class="nav-link" href="menu.php">Menu</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="seat.php">座席予約</a>
+                      <a class="nav-link" href="seat.php">Reservation</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="dm.php">お知らせ</a>
+                      <a class="nav-link" href="dm.php">Notice</a>
                     </li>
                   </ul>
                   <div class="user_option">

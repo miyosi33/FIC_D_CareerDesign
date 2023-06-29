@@ -3,6 +3,10 @@
 <!-- アカウント情報 -->
 <section class="book_section layout_padding customer_section">
     <div class="container2">
+        <div class="heading_container heading_center">
+            <h2>Notice</h2>
+            <h6>お知らせ</h6>
+        </div>
         <div class="col-md-12">
             <?php
             $dmList = $pdo->query('SELECT * FROM dm ORDER BY dm_id DESC')->fetchAll();

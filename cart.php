@@ -2,8 +2,10 @@
 
 <section class="book_section layout_padding customer_section">
   <div class="container">
-    <div class="heading_container">
+    <div class="heading_container heading_center">
         <h2>Cart</h2>
+        <h6>カート</h6>
+    </div>
         <?php
             if (!empty($_SESSION['product'])) {
               echo '<div class="cart_container form_container">';
@@ -71,7 +73,6 @@
               echo '</div>';
             }
         ?>   
-    </div>
   </div>
 </section>
 
