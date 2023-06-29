@@ -1,7 +1,6 @@
 drop database if exists kadai;
 create database kadai default character set utf8 collate utf8_general_ci;
-grant all on kadai.* to 'staff'@'localhost' identified by 'password';
-use kadai;
+grant all on kadai.* to 'staff'@'localhost' identified by 'password';use kadai;
 
 /* 商品 */
 create table product (
@@ -39,4 +38,14 @@ create table purchase_detail (
     foreign key (purchase_id) references purchase(id), 	
     foreign key (product_id) references product(product_id)	
 );
+
+/* 管理者 */
+create table admin (
+    admin_id int auto_increment primary key,
+    username varchar(100) not null unique,
+    password varchar(100) not null
+);
+
+insert into admin (username, password) values ('admin', 'password');
+
 insert into product values(null, 'クッキー', 120, 'food', 'Cookie.jpg', '小麦の香ばしさが感じられるよう、全粒粉の生地にバターを練り込み、ソフトな食感に焼き上げたクッキーです。砂糖の一部にブラウンシュガーを使い、コクのある甘さをプラスしています。', 1);
